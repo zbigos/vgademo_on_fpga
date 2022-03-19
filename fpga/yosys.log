@@ -1,0 +1,2353 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.12 (git sha1 2156e20)
+
+
+-- Parsing `src/top.v' using frontend `verilog' --
+
+1. Executing Verilog-2005 frontend: src/top.v
+Parsing Verilog input from `src/top.v' to AST representation.
+Generating RTLIL representation for module `\vga_demo'.
+Successfully finished Verilog frontend.
+
+-- Parsing `src/sphere.v' using frontend `verilog' --
+
+2. Executing Verilog-2005 frontend: src/sphere.v
+Parsing Verilog input from `src/sphere.v' to AST representation.
+Generating RTLIL representation for module `\sphere_renderer'.
+Successfully finished Verilog frontend.
+
+-- Parsing `src/vga_core.v' using frontend `verilog' --
+
+3. Executing Verilog-2005 frontend: src/vga_core.v
+Parsing Verilog input from `src/vga_core.v' to AST representation.
+Generating RTLIL representation for module `\VGAcore'.
+Warning: reg '\drawing_pixels' is assigned in a continuous assignment at src/vga_core.v:47.12-47.64.
+Warning: reg '\r' is assigned in a continuous assignment at src/vga_core.v:55.12-55.50.
+Warning: reg '\b' is assigned in a continuous assignment at src/vga_core.v:56.12-56.50.
+Warning: reg '\g' is assigned in a continuous assignment at src/vga_core.v:57.12-57.50.
+Successfully finished Verilog frontend.
+
+-- Parsing `src/vga_pll.v' using frontend `verilog' --
+
+4. Executing Verilog-2005 frontend: src/vga_pll.v
+Parsing Verilog input from `src/vga_pll.v' to AST representation.
+Generating RTLIL representation for module `\vga_pll'.
+Successfully finished Verilog frontend.
+
+-- Parsing `src/top_fpga.v' using frontend `verilog' --
+
+5. Executing Verilog-2005 frontend: src/top_fpga.v
+Parsing Verilog input from `src/top_fpga.v' to AST representation.
+Generating RTLIL representation for module `\top'.
+Successfully finished Verilog frontend.
+
+-- Running command `synth_ice40 -top top -json fpga/vga_demo.json' --
+
+6. Executing SYNTH_ICE40 pass.
+
+6.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\SB_IO'.
+Generating RTLIL representation for module `\SB_GB_IO'.
+Generating RTLIL representation for module `\SB_GB'.
+Generating RTLIL representation for module `\SB_LUT4'.
+Generating RTLIL representation for module `\SB_CARRY'.
+Generating RTLIL representation for module `\SB_DFF'.
+Generating RTLIL representation for module `\SB_DFFE'.
+Generating RTLIL representation for module `\SB_DFFSR'.
+Generating RTLIL representation for module `\SB_DFFR'.
+Generating RTLIL representation for module `\SB_DFFSS'.
+Generating RTLIL representation for module `\SB_DFFS'.
+Generating RTLIL representation for module `\SB_DFFESR'.
+Generating RTLIL representation for module `\SB_DFFER'.
+Generating RTLIL representation for module `\SB_DFFESS'.
+Generating RTLIL representation for module `\SB_DFFES'.
+Generating RTLIL representation for module `\SB_DFFN'.
+Generating RTLIL representation for module `\SB_DFFNE'.
+Generating RTLIL representation for module `\SB_DFFNSR'.
+Generating RTLIL representation for module `\SB_DFFNR'.
+Generating RTLIL representation for module `\SB_DFFNSS'.
+Generating RTLIL representation for module `\SB_DFFNS'.
+Generating RTLIL representation for module `\SB_DFFNESR'.
+Generating RTLIL representation for module `\SB_DFFNER'.
+Generating RTLIL representation for module `\SB_DFFNESS'.
+Generating RTLIL representation for module `\SB_DFFNES'.
+Generating RTLIL representation for module `\SB_RAM40_4K'.
+Generating RTLIL representation for module `\SB_RAM40_4KNR'.
+Generating RTLIL representation for module `\SB_RAM40_4KNW'.
+Generating RTLIL representation for module `\SB_RAM40_4KNRNW'.
+Generating RTLIL representation for module `\ICESTORM_LC'.
+Generating RTLIL representation for module `\SB_PLL40_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2_PAD'.
+Generating RTLIL representation for module `\SB_PLL40_2F_CORE'.
+Generating RTLIL representation for module `\SB_PLL40_2F_PAD'.
+Generating RTLIL representation for module `\SB_WARMBOOT'.
+Generating RTLIL representation for module `\SB_SPRAM256KA'.
+Generating RTLIL representation for module `\SB_HFOSC'.
+Generating RTLIL representation for module `\SB_LFOSC'.
+Generating RTLIL representation for module `\SB_RGBA_DRV'.
+Generating RTLIL representation for module `\SB_LED_DRV_CUR'.
+Generating RTLIL representation for module `\SB_RGB_DRV'.
+Generating RTLIL representation for module `\SB_I2C'.
+Generating RTLIL representation for module `\SB_SPI'.
+Generating RTLIL representation for module `\SB_LEDDA_IP'.
+Generating RTLIL representation for module `\SB_FILTER_50NS'.
+Generating RTLIL representation for module `\SB_IO_I3C'.
+Generating RTLIL representation for module `\SB_IO_OD'.
+Generating RTLIL representation for module `\SB_MAC16'.
+Generating RTLIL representation for module `\ICESTORM_RAM'.
+Successfully finished Verilog frontend.
+
+6.2. Executing HIERARCHY pass (managing design hierarchy).
+
+6.2.1. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \vga_demo
+Used module:         \VGAcore
+Used module:         \sphere_renderer
+Used module:     \vga_pll
+
+6.2.2. Analyzing design hierarchy..
+Top module:  \top
+Used module:     \vga_demo
+Used module:         \VGAcore
+Used module:         \sphere_renderer
+Used module:     \vga_pll
+Removed 0 unused modules.
+
+6.3. Executing PROC pass (convert processes to netlists).
+
+6.3.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+6.3.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1386$325 in module SB_DFFNES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1328$318 in module SB_DFFNESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1251$314 in module SB_DFFNER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1193$307 in module SB_DFFNESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1122$304 in module SB_DFFNS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1072$301 in module SB_DFFNSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1001$298 in module SB_DFFNR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:951$295 in module SB_DFFNSR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:789$287 in module SB_DFFES.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:731$280 in module SB_DFFESS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:654$276 in module SB_DFFER.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:596$269 in module SB_DFFESR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:525$266 in module SB_DFFS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:475$263 in module SB_DFFSS.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:404$260 in module SB_DFFR.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ice40/cells_sim.v:354$257 in module SB_DFFSR.
+Marked 3 switch rules as full_case in process $proc$src/vga_core.v:63$76 in module VGAcore.
+Marked 5 switch rules as full_case in process $proc$src/sphere.v:33$37 in module sphere_renderer.
+Marked 1 switch rules as full_case in process $proc$src/top.v:0$27 in module vga_demo.
+Removed a total of 0 dead cases.
+
+6.3.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 9 redundant assignments.
+Promoted 106 assignments to connections.
+
+6.3.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$328'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$324'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$317'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$313'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$306'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$303'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$300'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$297'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$294'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$292'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$290'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$286'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$279'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$275'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$268'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$265'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$262'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$259'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$256'.
+  Set init value: \Q = 1'0
+Found init rule in `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$254'.
+  Set init value: \Q = 1'0
+Found init rule in `\top.$proc$src/top_fpga.v:14$84'.
+  Set init value: \resetn_gen = 4'0000
+
+6.3.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \S in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1386$325'.
+Found async reset \R in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1251$314'.
+Found async reset \S in `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1122$304'.
+Found async reset \R in `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1001$298'.
+Found async reset \S in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:789$287'.
+Found async reset \R in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:654$276'.
+Found async reset \S in `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:525$266'.
+Found async reset \R in `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:404$260'.
+
+6.3.6. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$328'.
+Creating decoders for process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1386$325'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$324'.
+Creating decoders for process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1328$318'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$317'.
+Creating decoders for process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1251$314'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$313'.
+Creating decoders for process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1193$307'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$306'.
+Creating decoders for process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1122$304'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$303'.
+Creating decoders for process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1072$301'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$300'.
+Creating decoders for process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1001$298'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$297'.
+Creating decoders for process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:951$295'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$294'.
+Creating decoders for process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:906$293'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$292'.
+Creating decoders for process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:868$291'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$290'.
+Creating decoders for process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:789$287'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$286'.
+Creating decoders for process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:731$280'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$279'.
+Creating decoders for process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:654$276'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$275'.
+Creating decoders for process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:596$269'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$268'.
+Creating decoders for process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:525$266'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$265'.
+Creating decoders for process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:475$263'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$262'.
+Creating decoders for process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:404$260'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$259'.
+Creating decoders for process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:354$257'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$256'.
+Creating decoders for process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:309$255'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$254'.
+Creating decoders for process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$253'.
+Creating decoders for process `\top.$proc$src/top_fpga.v:14$84'.
+Creating decoders for process `\top.$proc$src/top_fpga.v:25$82'.
+Creating decoders for process `\VGAcore.$proc$src/vga_core.v:63$76'.
+     1/7: $0\proposed_g[3:0]
+     2/7: $0\proposed_b[3:0]
+     3/7: $0\proposed_r[3:0]
+     4/7: $0\vscan_pos[9:0]
+     5/7: $0\hscan_pos[9:0]
+     6/7: $0\vreadwire[9:0]
+     7/7: $0\hreadwire[9:0]
+Creating decoders for process `\sphere_renderer.$proc$src/sphere.v:33$37'.
+     1/6: $0\spdcnt[20:0]
+     2/6: $0\deltah[0:0]
+     3/6: $0\deltav[0:0]
+     4/6: $0\current_v[6:0]
+     5/6: $0\current_h[6:0]
+     6/6: $0\colorv[3:0]
+Creating decoders for process `\vga_demo.$proc$src/top.v:0$31'.
+Creating decoders for process `\vga_demo.$proc$src/top.v:0$27'.
+     1/1: $1$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$29
+
+6.3.7. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\vga_demo.\imbus[0]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[1]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[2]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[3]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[4]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[5]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[6]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[7]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[8]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[9]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[10]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[11]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[12]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[13]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[14]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[15]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[16]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[17]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[18]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[19]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[20]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[21]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[22]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[23]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[24]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[25]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[26]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[27]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[28]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[29]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[30]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[31]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[32]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[33]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[34]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[35]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[36]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[37]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[38]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[39]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[40]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[41]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[42]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[43]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[44]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[45]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[46]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[47]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[48]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[49]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[50]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[51]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[52]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[53]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[54]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[55]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[56]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[57]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[58]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[59]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[60]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[61]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[62]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[63]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[64]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[65]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[66]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[67]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[68]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[69]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[70]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[71]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[72]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[73]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[74]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[75]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[76]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[77]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[78]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.\imbus[79]' from process `\vga_demo.$proc$src/top.v:0$31'.
+No latch inferred for signal `\vga_demo.$mem2reg_rd$\imbus$src/top.v:69$1_DATA' from process `\vga_demo.$proc$src/top.v:0$27'.
+
+6.3.8. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\SB_DFFNES.\Q' using process `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1386$325'.
+  created $adff cell `$procdff$699' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESS.\Q' using process `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1328$318'.
+  created $dff cell `$procdff$700' with negative edge clock.
+Creating register for signal `\SB_DFFNER.\Q' using process `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1251$314'.
+  created $adff cell `$procdff$701' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNESR.\Q' using process `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1193$307'.
+  created $dff cell `$procdff$702' with negative edge clock.
+Creating register for signal `\SB_DFFNS.\Q' using process `\SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1122$304'.
+  created $adff cell `$procdff$703' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSS.\Q' using process `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1072$301'.
+  created $dff cell `$procdff$704' with negative edge clock.
+Creating register for signal `\SB_DFFNR.\Q' using process `\SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1001$298'.
+  created $adff cell `$procdff$705' with negative edge clock and positive level reset.
+Creating register for signal `\SB_DFFNSR.\Q' using process `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:951$295'.
+  created $dff cell `$procdff$706' with negative edge clock.
+Creating register for signal `\SB_DFFNE.\Q' using process `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:906$293'.
+  created $dff cell `$procdff$707' with negative edge clock.
+Creating register for signal `\SB_DFFN.\Q' using process `\SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:868$291'.
+  created $dff cell `$procdff$708' with negative edge clock.
+Creating register for signal `\SB_DFFES.\Q' using process `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:789$287'.
+  created $adff cell `$procdff$709' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESS.\Q' using process `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:731$280'.
+  created $dff cell `$procdff$710' with positive edge clock.
+Creating register for signal `\SB_DFFER.\Q' using process `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:654$276'.
+  created $adff cell `$procdff$711' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFESR.\Q' using process `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:596$269'.
+  created $dff cell `$procdff$712' with positive edge clock.
+Creating register for signal `\SB_DFFS.\Q' using process `\SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:525$266'.
+  created $adff cell `$procdff$713' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSS.\Q' using process `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:475$263'.
+  created $dff cell `$procdff$714' with positive edge clock.
+Creating register for signal `\SB_DFFR.\Q' using process `\SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:404$260'.
+  created $adff cell `$procdff$715' with positive edge clock and positive level reset.
+Creating register for signal `\SB_DFFSR.\Q' using process `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:354$257'.
+  created $dff cell `$procdff$716' with positive edge clock.
+Creating register for signal `\SB_DFFE.\Q' using process `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:309$255'.
+  created $dff cell `$procdff$717' with positive edge clock.
+Creating register for signal `\SB_DFF.\Q' using process `\SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$253'.
+  created $dff cell `$procdff$718' with positive edge clock.
+Creating register for signal `\top.\reset' using process `\top.$proc$src/top_fpga.v:25$82'.
+  created $dff cell `$procdff$719' with positive edge clock.
+Creating register for signal `\top.\resetn_gen' using process `\top.$proc$src/top_fpga.v:25$82'.
+  created $dff cell `$procdff$720' with positive edge clock.
+Creating register for signal `\VGAcore.\hreadwire' using process `\VGAcore.$proc$src/vga_core.v:63$76'.
+  created $dff cell `$procdff$721' with positive edge clock.
+Creating register for signal `\VGAcore.\vreadwire' using process `\VGAcore.$proc$src/vga_core.v:63$76'.
+  created $dff cell `$procdff$722' with positive edge clock.
+Creating register for signal `\VGAcore.\hscan_pos' using process `\VGAcore.$proc$src/vga_core.v:63$76'.
+  created $dff cell `$procdff$723' with positive edge clock.
+Creating register for signal `\VGAcore.\vscan_pos' using process `\VGAcore.$proc$src/vga_core.v:63$76'.
+  created $dff cell `$procdff$724' with positive edge clock.
+Creating register for signal `\VGAcore.\proposed_r' using process `\VGAcore.$proc$src/vga_core.v:63$76'.
+  created $dff cell `$procdff$725' with positive edge clock.
+Creating register for signal `\VGAcore.\proposed_b' using process `\VGAcore.$proc$src/vga_core.v:63$76'.
+  created $dff cell `$procdff$726' with positive edge clock.
+Creating register for signal `\VGAcore.\proposed_g' using process `\VGAcore.$proc$src/vga_core.v:63$76'.
+  created $dff cell `$procdff$727' with positive edge clock.
+Creating register for signal `\sphere_renderer.\colorv' using process `\sphere_renderer.$proc$src/sphere.v:33$37'.
+  created $dff cell `$procdff$728' with positive edge clock.
+Creating register for signal `\sphere_renderer.\current_h' using process `\sphere_renderer.$proc$src/sphere.v:33$37'.
+  created $dff cell `$procdff$729' with positive edge clock.
+Creating register for signal `\sphere_renderer.\current_v' using process `\sphere_renderer.$proc$src/sphere.v:33$37'.
+  created $dff cell `$procdff$730' with positive edge clock.
+Creating register for signal `\sphere_renderer.\deltav' using process `\sphere_renderer.$proc$src/sphere.v:33$37'.
+  created $dff cell `$procdff$731' with positive edge clock.
+Creating register for signal `\sphere_renderer.\deltah' using process `\sphere_renderer.$proc$src/sphere.v:33$37'.
+  created $dff cell `$procdff$732' with positive edge clock.
+Creating register for signal `\sphere_renderer.\spdcnt' using process `\sphere_renderer.$proc$src/sphere.v:33$37'.
+  created $dff cell `$procdff$733' with positive edge clock.
+
+6.3.9. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+6.3.10. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$328'.
+Found and cleaned up 1 empty switch in `\SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1386$325'.
+Removing empty process `SB_DFFNES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1386$325'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$324'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1328$318'.
+Removing empty process `SB_DFFNESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1328$318'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$317'.
+Found and cleaned up 1 empty switch in `\SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1251$314'.
+Removing empty process `SB_DFFNER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1251$314'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$313'.
+Found and cleaned up 2 empty switches in `\SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1193$307'.
+Removing empty process `SB_DFFNESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1193$307'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$306'.
+Removing empty process `SB_DFFNS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1122$304'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$303'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1072$301'.
+Removing empty process `SB_DFFNSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1072$301'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$300'.
+Removing empty process `SB_DFFNR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:1001$298'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$297'.
+Found and cleaned up 1 empty switch in `\SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:951$295'.
+Removing empty process `SB_DFFNSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:951$295'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$294'.
+Found and cleaned up 1 empty switch in `\SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:906$293'.
+Removing empty process `SB_DFFNE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:906$293'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$292'.
+Removing empty process `SB_DFFN.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:868$291'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$290'.
+Found and cleaned up 1 empty switch in `\SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:789$287'.
+Removing empty process `SB_DFFES.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:789$287'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$286'.
+Found and cleaned up 2 empty switches in `\SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:731$280'.
+Removing empty process `SB_DFFESS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:731$280'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$279'.
+Found and cleaned up 1 empty switch in `\SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:654$276'.
+Removing empty process `SB_DFFER.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:654$276'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$275'.
+Found and cleaned up 2 empty switches in `\SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:596$269'.
+Removing empty process `SB_DFFESR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:596$269'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$268'.
+Removing empty process `SB_DFFS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:525$266'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$265'.
+Found and cleaned up 1 empty switch in `\SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:475$263'.
+Removing empty process `SB_DFFSS.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:475$263'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$262'.
+Removing empty process `SB_DFFR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:404$260'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$259'.
+Found and cleaned up 1 empty switch in `\SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:354$257'.
+Removing empty process `SB_DFFSR.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:354$257'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$256'.
+Found and cleaned up 1 empty switch in `\SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:309$255'.
+Removing empty process `SB_DFFE.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:309$255'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:0$254'.
+Removing empty process `SB_DFF.$proc$/usr/bin/../share/yosys/ice40/cells_sim.v:271$253'.
+Removing empty process `top.$proc$src/top_fpga.v:14$84'.
+Removing empty process `top.$proc$src/top_fpga.v:25$82'.
+Found and cleaned up 3 empty switches in `\VGAcore.$proc$src/vga_core.v:63$76'.
+Removing empty process `VGAcore.$proc$src/vga_core.v:63$76'.
+Found and cleaned up 9 empty switches in `\sphere_renderer.$proc$src/sphere.v:33$37'.
+Removing empty process `sphere_renderer.$proc$src/sphere.v:33$37'.
+Removing empty process `vga_demo.$proc$src/top.v:0$31'.
+Found and cleaned up 1 empty switch in `\vga_demo.$proc$src/top.v:0$27'.
+Removing empty process `vga_demo.$proc$src/top.v:0$27'.
+Cleaned up 31 empty switches.
+
+6.3.11. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+Optimizing module vga_pll.
+Optimizing module VGAcore.
+<suppressed ~7 debug messages>
+Optimizing module sphere_renderer.
+<suppressed ~10 debug messages>
+Optimizing module vga_demo.
+<suppressed ~4 debug messages>
+
+6.4. Executing FLATTEN pass (flatten design).
+Deleting now unused module vga_pll.
+Deleting now unused module VGAcore.
+Deleting now unused module sphere_renderer.
+Deleting now unused module vga_demo.
+<suppressed ~6 debug messages>
+
+6.5. Executing TRIBUF pass.
+
+6.6. Executing DEMINOUT pass (demote inout ports to input or output).
+
+6.7. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~12 debug messages>
+
+6.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 4 unused cells and 235 unused wires.
+<suppressed ~14 debug messages>
+
+6.9. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Warning: Wire top.\topi.imbus[80] [161] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [160] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [159] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [158] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [157] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [156] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [155] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [154] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [153] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [152] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [151] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [150] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [149] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [148] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [147] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [146] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [145] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [144] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [143] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [142] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [141] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [140] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [139] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [138] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [137] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [136] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [135] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [134] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [133] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [132] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [131] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [130] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [129] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [128] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [127] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [126] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [125] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [124] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [123] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [122] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [121] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [120] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [119] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [118] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [117] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [116] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [115] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [114] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [113] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [112] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [111] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [110] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [109] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [108] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [107] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [106] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [105] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [104] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [103] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [102] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [101] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [100] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [99] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [98] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [97] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [96] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [95] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [94] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [93] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [92] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [91] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [90] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [89] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [88] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [87] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [86] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [85] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [84] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [83] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [82] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [81] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [80] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [79] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [78] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [77] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [76] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [75] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [74] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [73] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [72] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [71] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [70] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [69] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [68] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [67] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [66] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [65] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [64] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [63] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [62] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [61] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [60] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [59] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [58] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [57] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [56] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [55] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [54] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [53] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [52] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [51] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [50] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [49] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [48] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [47] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [46] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [45] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [44] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [43] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [42] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [41] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [40] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [39] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [38] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [37] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [36] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [35] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [34] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [33] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [32] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [31] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [30] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [29] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [28] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [27] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [26] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [25] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [24] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [23] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [22] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [21] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [20] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [19] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [18] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [17] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [16] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [15] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [14] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [13] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [12] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [11] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [10] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [9] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [8] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [7] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [6] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [5] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [4] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [3] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [2] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [1] is used but has no driver.
+Warning: Wire top.\topi.imbus[80] [0] is used but has no driver.
+Found and reported 162 problems.
+
+6.10. Executing OPT pass (performing simple optimizations).
+
+6.10.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.10.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+6.10.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+6.10.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    New ctrl vector for $pmux cell $flatten\topi.$procmux$617: { $flatten\topi.$procmux$672_CMP $flatten\topi.$procmux$671_CMP $flatten\topi.$procmux$670_CMP $flatten\topi.$procmux$669_CMP $flatten\topi.$procmux$668_CMP $flatten\topi.$procmux$667_CMP $flatten\topi.$procmux$666_CMP $flatten\topi.$procmux$665_CMP $flatten\topi.$procmux$664_CMP $flatten\topi.$procmux$663_CMP $flatten\topi.$procmux$662_CMP $flatten\topi.$procmux$661_CMP $flatten\topi.$procmux$660_CMP $flatten\topi.$procmux$659_CMP $flatten\topi.$procmux$658_CMP $flatten\topi.$procmux$657_CMP $flatten\topi.$procmux$656_CMP $flatten\topi.$procmux$655_CMP $flatten\topi.$procmux$654_CMP $flatten\topi.$procmux$653_CMP $flatten\topi.$procmux$652_CMP $flatten\topi.$procmux$651_CMP $flatten\topi.$procmux$650_CMP $flatten\topi.$procmux$649_CMP $flatten\topi.$procmux$648_CMP $flatten\topi.$procmux$647_CMP $flatten\topi.$procmux$646_CMP $flatten\topi.$procmux$645_CMP $flatten\topi.$procmux$644_CMP $flatten\topi.$procmux$643_CMP $flatten\topi.$procmux$642_CMP $flatten\topi.$procmux$641_CMP $flatten\topi.$procmux$640_CMP $flatten\topi.$procmux$639_CMP $flatten\topi.$procmux$638_CMP $flatten\topi.$procmux$637_CMP $flatten\topi.$procmux$636_CMP $flatten\topi.$procmux$635_CMP $flatten\topi.$procmux$634_CMP $flatten\topi.$procmux$633_CMP $auto$opt_reduce.cc:134:opt_mux$743 $auto$opt_reduce.cc:134:opt_mux$741 $auto$opt_reduce.cc:134:opt_mux$739 $auto$opt_reduce.cc:134:opt_mux$737 $auto$opt_reduce.cc:134:opt_mux$735 $flatten\topi.$procmux$618_CMP }
+  Optimizing cells in module \top.
+Performed a total of 1 changes.
+
+6.10.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.10.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.10.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 3 unused wires.
+<suppressed ~1 debug messages>
+
+6.10.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.10.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.10.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+6.10.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+6.10.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.10.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.10.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.10.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.10.16. Finished OPT passes. (There is nothing left to do.)
+
+6.11. Executing FSM pass (extract and optimize FSM).
+
+6.11.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+6.11.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+6.11.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.11.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.11.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+6.11.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+6.11.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+6.12. Executing OPT pass (performing simple optimizations).
+
+6.12.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.12.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.12.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~27 debug messages>
+
+6.12.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+6.12.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.12.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $flatten\topi.\spr.$procdff$733 ($dff) from module top (D = $flatten\topi.\spr.$procmux$564_Y, Q = \topi.spr.spdcnt, rval = 21'000000000000000000000).
+Adding SRST signal on $flatten\topi.\spr.$procdff$732 ($dff) from module top (D = $flatten\topi.\spr.$procmux$574_Y, Q = \topi.spr.deltah, rval = 1'1).
+Adding EN signal on $auto$ff.cc:262:slice$745 ($sdff) from module top (D = $flatten\topi.\spr.$procmux$572_Y, Q = \topi.spr.deltah).
+Adding SRST signal on $flatten\topi.\spr.$procdff$731 ($dff) from module top (D = $flatten\topi.\spr.$procmux$584_Y, Q = \topi.spr.deltav, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$751 ($sdff) from module top (D = $flatten\topi.\spr.$procmux$582_Y, Q = \topi.spr.deltav).
+Adding SRST signal on $flatten\topi.\spr.$procdff$730 ($dff) from module top (D = $flatten\topi.\spr.$procmux$596_Y, Q = \topi.spr.current_v, rval = 7'0100000).
+Adding EN signal on $auto$ff.cc:262:slice$757 ($sdff) from module top (D = $flatten\topi.\spr.$procmux$591_Y, Q = \topi.spr.current_v).
+Adding SRST signal on $flatten\topi.\spr.$procdff$729 ($dff) from module top (D = $flatten\topi.\spr.$procmux$608_Y, Q = \topi.spr.current_h, rval = 7'0100000).
+Adding EN signal on $auto$ff.cc:262:slice$763 ($sdff) from module top (D = $flatten\topi.\spr.$procmux$603_Y, Q = \topi.spr.current_h).
+Adding EN signal on $flatten\topi.\spr.$procdff$728 ($dff) from module top (D = $flatten\topi.\spr.$ternary$src/sphere.v:41$49_Y [3:0], Q = \topi.spr.colorv).
+Adding SRST signal on $auto$ff.cc:262:slice$769 ($dffe) from module top (D = $flatten\topi.\spr.$ternary$src/sphere.v:41$47_Y [3:0], Q = \topi.spr.colorv, rval = 4'1111).
+Adding SRST signal on $flatten\topi.\spg.$procdff$733 ($dff) from module top (D = $flatten\topi.\spg.$procmux$564_Y, Q = \topi.spg.spdcnt, rval = 21'000000000000000000000).
+Adding SRST signal on $flatten\topi.\spg.$procdff$732 ($dff) from module top (D = $flatten\topi.\spg.$procmux$574_Y, Q = \topi.spg.deltah, rval = 1'0).
+Adding EN signal on $auto$ff.cc:262:slice$772 ($sdff) from module top (D = $flatten\topi.\spg.$procmux$572_Y, Q = \topi.spg.deltah).
+Adding SRST signal on $flatten\topi.\spg.$procdff$731 ($dff) from module top (D = $flatten\topi.\spg.$procmux$584_Y, Q = \topi.spg.deltav, rval = 1'1).
+Adding EN signal on $auto$ff.cc:262:slice$778 ($sdff) from module top (D = $flatten\topi.\spg.$procmux$582_Y, Q = \topi.spg.deltav).
+Adding SRST signal on $flatten\topi.\spg.$procdff$730 ($dff) from module top (D = $flatten\topi.\spg.$procmux$596_Y, Q = \topi.spg.current_v, rval = 7'0100000).
+Adding EN signal on $auto$ff.cc:262:slice$784 ($sdff) from module top (D = $flatten\topi.\spg.$procmux$591_Y, Q = \topi.spg.current_v).
+Adding SRST signal on $flatten\topi.\spg.$procdff$729 ($dff) from module top (D = $flatten\topi.\spg.$procmux$608_Y, Q = \topi.spg.current_h, rval = 7'0100000).
+Adding EN signal on $auto$ff.cc:262:slice$790 ($sdff) from module top (D = $flatten\topi.\spg.$procmux$603_Y, Q = \topi.spg.current_h).
+Adding EN signal on $flatten\topi.\spg.$procdff$728 ($dff) from module top (D = $flatten\topi.\spg.$ternary$src/sphere.v:41$49_Y [3:0], Q = \topi.spg.colorv).
+Adding SRST signal on $auto$ff.cc:262:slice$796 ($dffe) from module top (D = $flatten\topi.\spg.$ternary$src/sphere.v:41$47_Y [3:0], Q = \topi.spg.colorv, rval = 4'1111).
+Adding SRST signal on $flatten\topi.\spb.$procdff$733 ($dff) from module top (D = $flatten\topi.\spb.$procmux$564_Y, Q = \topi.spb.spdcnt, rval = 21'000000000000000000000).
+Adding SRST signal on $flatten\topi.\spb.$procdff$732 ($dff) from module top (D = $flatten\topi.\spb.$procmux$574_Y, Q = \topi.spb.deltah, rval = 1'1).
+Adding EN signal on $auto$ff.cc:262:slice$799 ($sdff) from module top (D = $flatten\topi.\spb.$procmux$572_Y, Q = \topi.spb.deltah).
+Adding SRST signal on $flatten\topi.\spb.$procdff$731 ($dff) from module top (D = $flatten\topi.\spb.$procmux$584_Y, Q = \topi.spb.deltav, rval = 1'1).
+Adding EN signal on $auto$ff.cc:262:slice$805 ($sdff) from module top (D = $flatten\topi.\spb.$procmux$582_Y, Q = \topi.spb.deltav).
+Adding SRST signal on $flatten\topi.\spb.$procdff$730 ($dff) from module top (D = $flatten\topi.\spb.$procmux$596_Y, Q = \topi.spb.current_v, rval = 7'0100000).
+Adding EN signal on $auto$ff.cc:262:slice$811 ($sdff) from module top (D = $flatten\topi.\spb.$procmux$591_Y, Q = \topi.spb.current_v).
+Adding SRST signal on $flatten\topi.\spb.$procdff$729 ($dff) from module top (D = $flatten\topi.\spb.$procmux$608_Y, Q = \topi.spb.current_h, rval = 7'0100000).
+Adding EN signal on $auto$ff.cc:262:slice$817 ($sdff) from module top (D = $flatten\topi.\spb.$procmux$603_Y, Q = \topi.spb.current_h).
+Adding EN signal on $flatten\topi.\spb.$procdff$728 ($dff) from module top (D = $flatten\topi.\spb.$ternary$src/sphere.v:41$49_Y [3:0], Q = \topi.spb.colorv).
+Adding SRST signal on $auto$ff.cc:262:slice$823 ($dffe) from module top (D = $flatten\topi.\spb.$ternary$src/sphere.v:41$47_Y [3:0], Q = \topi.spb.colorv, rval = 4'1111).
+Adding SRST signal on $flatten\topi.\core.$procdff$727 ($dff) from module top (D = $flatten\topi.\core.$procmux$513_Y, Q = \topi.core.proposed_g, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:262:slice$825 ($sdff) from module top (D = \topi.core.pixstream [7:4], Q = \topi.core.proposed_g).
+Adding SRST signal on $flatten\topi.\core.$procdff$726 ($dff) from module top (D = $flatten\topi.\core.$procmux$522_Y, Q = \topi.core.proposed_b, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:262:slice$833 ($sdff) from module top (D = \topi.core.pixstream [11:8], Q = \topi.core.proposed_b).
+Adding SRST signal on $flatten\topi.\core.$procdff$725 ($dff) from module top (D = $flatten\topi.\core.$procmux$531_Y, Q = \topi.core.proposed_r, rval = 4'0000).
+Adding EN signal on $auto$ff.cc:262:slice$841 ($sdff) from module top (D = \topi.core.pixstream [3:0], Q = \topi.core.proposed_r).
+Adding SRST signal on $flatten\topi.\core.$procdff$724 ($dff) from module top (D = $flatten\topi.\core.$procmux$540_Y, Q = \topi.core.vscan_pos, rval = 10'0000000000).
+Adding EN signal on $auto$ff.cc:262:slice$849 ($sdff) from module top (D = $flatten\topi.\core.$procmux$540_Y, Q = \topi.core.vscan_pos).
+Adding SRST signal on $flatten\topi.\core.$procdff$723 ($dff) from module top (D = $flatten\topi.\core.$procmux$546_Y, Q = \topi.core.hscan_pos, rval = 10'0000000000).
+Adding EN signal on $auto$ff.cc:262:slice$853 ($sdff) from module top (D = $flatten\topi.\core.$add$src/vga_core.v:83$81_Y, Q = \topi.core.hscan_pos).
+Adding EN signal on $flatten\topi.\core.$procdff$722 ($dff) from module top (D = \topi.core.vscan_pos, Q = \topi.core.vreadwire).
+Adding EN signal on $flatten\topi.\core.$procdff$721 ($dff) from module top (D = \topi.core.hscan_pos, Q = \topi.core.hreadwire).
+
+6.12.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 54 unused cells and 54 unused wires.
+<suppressed ~55 debug messages>
+
+6.12.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~7 debug messages>
+
+6.12.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.12.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+6.12.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+6.12.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~36 debug messages>
+Removed a total of 12 cells.
+
+6.12.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.12.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 12 unused wires.
+<suppressed ~1 debug messages>
+
+6.12.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.12.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.12.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+6.12.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+6.12.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.12.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.12.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.12.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.12.23. Finished OPT passes. (There is nothing left to do.)
+
+6.13. Executing WREDUCE pass (reducing word size of cells).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\topi.\core.$lt$src/vga_core.v:58$66 ($lt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\topi.\core.$le$src/vga_core.v:59$67 ($le).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\topi.\core.$ge$src/vga_core.v:60$68 ($ge).
+Removed top 22 bits (of 32) from port B of cell top.$flatten\topi.\core.$lt$src/vga_core.v:60$69 ($lt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\topi.\core.$ge$src/vga_core.v:61$72 ($ge).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\topi.\core.$lt$src/vga_core.v:61$73 ($lt).
+Removed cell top.$flatten\topi.\core.$procmux$537 ($mux).
+Removed top 7 bits (of 15) from port Y of cell top.$flatten\topi.\spr.$sub$src/sphere.v:20$33 ($sub).
+Removed top 26 bits (of 32) from port A of cell top.$flatten\topi.\spr.$gt$src/sphere.v:41$40 ($gt).
+Removed top 24 bits (of 32) from port B of cell top.$flatten\topi.\spr.$lt$src/sphere.v:41$42 ($lt).
+Removed top 15 bits (of 21) from port B of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$43 ($sub).
+Removed top 16 bits (of 32) from port Y of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$43 ($sub).
+Removed top 27 bits (of 32) from port A of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$45 ($sub).
+Removed top 3 bits (of 32) from port B of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$45 ($sub).
+Removed top 2 bits (of 32) from port Y of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$45 ($sub).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.\spr.$ternary$src/sphere.v:41$47 ($mux).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.\spr.$lt$src/sphere.v:44$52 ($lt).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.\spr.$lt$src/sphere.v:47$53 ($lt).
+Removed top 26 bits (of 32) from port B of cell top.$flatten\topi.\spr.$gt$src/sphere.v:50$54 ($gt).
+Removed top 25 bits (of 32) from port B of cell top.$flatten\topi.\spr.$gt$src/sphere.v:53$55 ($gt).
+Removed cell top.$flatten\topi.\spr.$procmux$570 ($mux).
+Removed cell top.$flatten\topi.\spr.$procmux$580 ($mux).
+Removed top 7 bits (of 15) from port Y of cell top.$flatten\topi.\spg.$sub$src/sphere.v:20$33 ($sub).
+Removed top 26 bits (of 32) from port A of cell top.$flatten\topi.\spg.$gt$src/sphere.v:41$40 ($gt).
+Removed top 24 bits (of 32) from port B of cell top.$flatten\topi.\spg.$lt$src/sphere.v:41$42 ($lt).
+Removed top 15 bits (of 21) from port B of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$43 ($sub).
+Removed top 16 bits (of 32) from port Y of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$43 ($sub).
+Removed top 27 bits (of 32) from port A of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$45 ($sub).
+Removed top 3 bits (of 32) from port B of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$45 ($sub).
+Removed top 2 bits (of 32) from port Y of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$45 ($sub).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.\spg.$ternary$src/sphere.v:41$47 ($mux).
+Removed top 1 bits (of 21) from port B of cell top.$flatten\topi.\spg.$eq$src/sphere.v:42$50 ($eq).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.\spg.$lt$src/sphere.v:44$52 ($lt).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.\spg.$lt$src/sphere.v:47$53 ($lt).
+Removed top 26 bits (of 32) from port B of cell top.$flatten\topi.\spg.$gt$src/sphere.v:50$54 ($gt).
+Removed top 25 bits (of 32) from port B of cell top.$flatten\topi.\spg.$gt$src/sphere.v:53$55 ($gt).
+Removed top 1 bits (of 21) from port B of cell top.$flatten\topi.\spg.$gt$src/sphere.v:56$56 ($gt).
+Removed cell top.$flatten\topi.\spg.$procmux$570 ($mux).
+Removed cell top.$flatten\topi.\spg.$procmux$580 ($mux).
+Removed top 7 bits (of 15) from port Y of cell top.$flatten\topi.\spb.$sub$src/sphere.v:20$33 ($sub).
+Removed top 26 bits (of 32) from port A of cell top.$flatten\topi.\spb.$gt$src/sphere.v:41$40 ($gt).
+Removed top 24 bits (of 32) from port B of cell top.$flatten\topi.\spb.$lt$src/sphere.v:41$42 ($lt).
+Removed top 15 bits (of 21) from port B of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$43 ($sub).
+Removed top 16 bits (of 32) from port Y of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$43 ($sub).
+Removed top 27 bits (of 32) from port A of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$45 ($sub).
+Removed top 3 bits (of 32) from port B of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$45 ($sub).
+Removed top 2 bits (of 32) from port Y of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$45 ($sub).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.\spb.$ternary$src/sphere.v:41$47 ($mux).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.\spb.$lt$src/sphere.v:44$52 ($lt).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.\spb.$lt$src/sphere.v:47$53 ($lt).
+Removed top 26 bits (of 32) from port B of cell top.$flatten\topi.\spb.$gt$src/sphere.v:50$54 ($gt).
+Removed top 25 bits (of 32) from port B of cell top.$flatten\topi.\spb.$gt$src/sphere.v:53$55 ($gt).
+Removed cell top.$flatten\topi.\spb.$procmux$570 ($mux).
+Removed cell top.$flatten\topi.\spb.$procmux$580 ($mux).
+Removed top 5 bits (of 7) from port B of cell top.$flatten\topi.$procmux$695_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell top.$flatten\topi.$procmux$694_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell top.$flatten\topi.$procmux$693_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell top.$flatten\topi.$procmux$692_CMP0 ($eq).
+Removed top 4 bits (of 7) from port B of cell top.$flatten\topi.$procmux$691_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$690_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$689_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$688_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$687_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$686_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$685_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$684_CMP0 ($eq).
+Removed top 3 bits (of 7) from port B of cell top.$flatten\topi.$procmux$683_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$682_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$681_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$680_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$679_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$678_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$677_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$676_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$675_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$674_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$673_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$672_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$671_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$670_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$669_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$668_CMP0 ($eq).
+Removed top 2 bits (of 7) from port B of cell top.$flatten\topi.$procmux$667_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$666_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$665_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$664_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$663_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$662_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$661_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$660_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$659_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$658_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$657_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$656_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$655_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$654_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$653_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$652_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$651_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$650_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$649_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$648_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$647_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$646_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$645_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$644_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$643_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$642_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$641_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$640_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$639_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$638_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$637_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$636_CMP0 ($eq).
+Removed top 1 bits (of 7) from port B of cell top.$flatten\topi.$procmux$635_CMP0 ($eq).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\topi.$sub$src/top.v:69$30 ($sub).
+Removed top 25 bits (of 32) from port Y of cell top.$flatten\topi.$sub$src/top.v:69$30 ($sub).
+Removed top 3 bits (of 10) from port A of cell top.$flatten\topi.$sub$src/top.v:69$30 ($sub).
+Removed top 4 bits (of 9) from port B of cell top.$flatten\topi.$sub$src/top.v:69$30 ($sub).
+Removed top 22 bits (of 32) from port A of cell top.$flatten\topi.$sub$src/top.v:68$23 ($sub).
+Removed top 23 bits (of 32) from port Y of cell top.$flatten\topi.$sub$src/top.v:68$23 ($sub).
+Removed top 2 bits (of 10) from port A of cell top.$flatten\topi.$sub$src/top.v:68$23 ($sub).
+Removed top 1 bits (of 10) from port B of cell top.$flatten\topi.$sub$src/top.v:68$23 ($sub).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\topi.$gt$src/top.v:66$21 ($gt).
+Removed top 23 bits (of 32) from port B of cell top.$flatten\topi.$gt$src/top.v:66$20 ($gt).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.$ternary$src/top.v:64$19 ($mux).
+Removed top 5 bits (of 7) from port B of cell top.$flatten\topi.$procmux$696_CMP0 ($eq).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.$ternary$src/top.v:64$17 ($mux).
+Removed top 28 bits (of 32) from port A of cell top.$flatten\topi.$gt$src/top.v:64$15 ($gt).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.$gt$src/top.v:64$15 ($gt).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.$ternary$src/top.v:63$13 ($mux).
+Removed top 6 bits (of 7) from port B of cell top.$flatten\topi.$procmux$697_CMP0 ($eq).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.$ternary$src/top.v:63$11 ($mux).
+Removed top 28 bits (of 32) from port A of cell top.$flatten\topi.$gt$src/top.v:63$9 ($gt).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.$gt$src/top.v:63$9 ($gt).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.$ternary$src/top.v:62$7 ($mux).
+Removed top 28 bits (of 32) from mux cell top.$flatten\topi.$ternary$src/top.v:62$5 ($mux).
+Removed top 28 bits (of 32) from port A of cell top.$flatten\topi.$gt$src/top.v:62$3 ($gt).
+Removed top 28 bits (of 32) from port B of cell top.$flatten\topi.$gt$src/top.v:62$3 ($gt).
+Removed top 7 bits (of 15) from port Y of cell top.$flatten\topi.\spr.$sub$src/sphere.v:19$32 ($sub).
+Removed top 7 bits (of 15) from port Y of cell top.$flatten\topi.\spg.$sub$src/sphere.v:19$32 ($sub).
+Removed top 7 bits (of 15) from port Y of cell top.$flatten\topi.\spb.$sub$src/sphere.v:19$32 ($sub).
+Removed top 26 bits (of 30) from port Y of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$45 ($sub).
+Removed top 4 bits (of 5) from port A of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$45 ($sub).
+Removed top 25 bits (of 29) from port B of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$45 ($sub).
+Removed top 26 bits (of 30) from port Y of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$45 ($sub).
+Removed top 4 bits (of 5) from port A of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$45 ($sub).
+Removed top 25 bits (of 29) from port B of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$45 ($sub).
+Removed top 26 bits (of 30) from port Y of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$45 ($sub).
+Removed top 4 bits (of 5) from port A of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$45 ($sub).
+Removed top 25 bits (of 29) from port B of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$45 ($sub).
+Removed top 9 bits (of 16) from port Y of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$43 ($sub).
+Removed top 8 bits (of 15) from port A of cell top.$flatten\topi.\spr.$sub$src/sphere.v:41$43 ($sub).
+Removed top 9 bits (of 16) from port Y of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$43 ($sub).
+Removed top 8 bits (of 15) from port A of cell top.$flatten\topi.\spg.$sub$src/sphere.v:41$43 ($sub).
+Removed top 9 bits (of 16) from port Y of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$43 ($sub).
+Removed top 8 bits (of 15) from port A of cell top.$flatten\topi.\spb.$sub$src/sphere.v:41$43 ($sub).
+Removed top 28 bits (of 32) from wire top.$flatten\topi.$ternary$src/top.v:62$5_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.$ternary$src/top.v:62$7_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.$ternary$src/top.v:63$11_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.$ternary$src/top.v:63$13_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.$ternary$src/top.v:64$17_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.$ternary$src/top.v:64$19_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.\spb.$div$src/sphere.v:41$44_Y.
+Removed top 29 bits (of 32) from wire top.$flatten\topi.\spb.$sub$src/sphere.v:41$43_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.\spg.$div$src/sphere.v:41$44_Y.
+Removed top 29 bits (of 32) from wire top.$flatten\topi.\spg.$sub$src/sphere.v:41$43_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.\spg.$sub$src/sphere.v:41$45_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.\spr.$div$src/sphere.v:41$44_Y.
+Removed top 29 bits (of 32) from wire top.$flatten\topi.\spr.$sub$src/sphere.v:41$43_Y.
+Removed top 28 bits (of 32) from wire top.$flatten\topi.\spr.$ternary$src/sphere.v:41$47_Y.
+
+6.14. Executing PEEPOPT pass (run peephole optimizers).
+
+6.15. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 26 unused wires.
+<suppressed ~1 debug messages>
+
+6.16. Executing SHARE pass (SAT-based resource sharing).
+
+6.17. Executing TECHMAP pass (map to technology primitives).
+
+6.17.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+6.17.2. Continuing TECHMAP pass.
+Using template $paramod$a2494f43fd37f0250713e2ff4725dc6a1c6094f9\_90_lut_cmp_ for cells of type $gt.
+No more expansions possible.
+<suppressed ~454 debug messages>
+
+6.18. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.19. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 9 unused wires.
+<suppressed ~1 debug messages>
+
+6.20. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module top:
+  creating $macc model for $flatten\topi.$sub$src/top.v:68$23 ($sub).
+  creating $macc model for $flatten\topi.$sub$src/top.v:69$30 ($sub).
+  creating $macc model for $flatten\topi.\core.$add$src/vga_core.v:76$79 ($add).
+  creating $macc model for $flatten\topi.\core.$add$src/vga_core.v:83$81 ($add).
+  creating $macc model for $flatten\topi.\spb.$add$src/sphere.v:23$36 ($add).
+  creating $macc model for $flatten\topi.\spb.$add$src/sphere.v:43$51 ($add).
+  creating $macc model for $flatten\topi.\spb.$add$src/sphere.v:58$57 ($add).
+  creating $macc model for $flatten\topi.\spb.$add$src/sphere.v:64$59 ($add).
+  creating $macc model for $flatten\topi.\spb.$mul$src/sphere.v:23$34 ($mul).
+  creating $macc model for $flatten\topi.\spb.$mul$src/sphere.v:23$35 ($mul).
+  creating $macc model for $flatten\topi.\spb.$sub$src/sphere.v:19$32 ($sub).
+  creating $macc model for $flatten\topi.\spb.$sub$src/sphere.v:20$33 ($sub).
+  creating $macc model for $flatten\topi.\spb.$sub$src/sphere.v:41$43 ($sub).
+  creating $macc model for $flatten\topi.\spb.$sub$src/sphere.v:41$45 ($sub).
+  creating $macc model for $flatten\topi.\spb.$sub$src/sphere.v:60$58 ($sub).
+  creating $macc model for $flatten\topi.\spb.$sub$src/sphere.v:66$60 ($sub).
+  creating $macc model for $flatten\topi.\spg.$add$src/sphere.v:23$36 ($add).
+  creating $macc model for $flatten\topi.\spg.$add$src/sphere.v:43$51 ($add).
+  creating $macc model for $flatten\topi.\spg.$add$src/sphere.v:58$57 ($add).
+  creating $macc model for $flatten\topi.\spg.$add$src/sphere.v:64$59 ($add).
+  creating $macc model for $flatten\topi.\spg.$mul$src/sphere.v:23$34 ($mul).
+  creating $macc model for $flatten\topi.\spg.$mul$src/sphere.v:23$35 ($mul).
+  creating $macc model for $flatten\topi.\spg.$sub$src/sphere.v:19$32 ($sub).
+  creating $macc model for $flatten\topi.\spg.$sub$src/sphere.v:20$33 ($sub).
+  creating $macc model for $flatten\topi.\spg.$sub$src/sphere.v:41$43 ($sub).
+  creating $macc model for $flatten\topi.\spg.$sub$src/sphere.v:41$45 ($sub).
+  creating $macc model for $flatten\topi.\spg.$sub$src/sphere.v:60$58 ($sub).
+  creating $macc model for $flatten\topi.\spg.$sub$src/sphere.v:66$60 ($sub).
+  creating $macc model for $flatten\topi.\spr.$add$src/sphere.v:23$36 ($add).
+  creating $macc model for $flatten\topi.\spr.$add$src/sphere.v:43$51 ($add).
+  creating $macc model for $flatten\topi.\spr.$add$src/sphere.v:58$57 ($add).
+  creating $macc model for $flatten\topi.\spr.$add$src/sphere.v:64$59 ($add).
+  creating $macc model for $flatten\topi.\spr.$mul$src/sphere.v:23$34 ($mul).
+  creating $macc model for $flatten\topi.\spr.$mul$src/sphere.v:23$35 ($mul).
+  creating $macc model for $flatten\topi.\spr.$sub$src/sphere.v:19$32 ($sub).
+  creating $macc model for $flatten\topi.\spr.$sub$src/sphere.v:20$33 ($sub).
+  creating $macc model for $flatten\topi.\spr.$sub$src/sphere.v:41$43 ($sub).
+  creating $macc model for $flatten\topi.\spr.$sub$src/sphere.v:41$45 ($sub).
+  creating $macc model for $flatten\topi.\spr.$sub$src/sphere.v:60$58 ($sub).
+  creating $macc model for $flatten\topi.\spr.$sub$src/sphere.v:66$60 ($sub).
+  merging $macc model for $flatten\topi.\spr.$mul$src/sphere.v:23$34 into $flatten\topi.\spr.$add$src/sphere.v:23$36.
+  merging $macc model for $flatten\topi.\spr.$mul$src/sphere.v:23$35 into $flatten\topi.\spr.$add$src/sphere.v:23$36.
+  merging $macc model for $flatten\topi.\spg.$mul$src/sphere.v:23$34 into $flatten\topi.\spg.$add$src/sphere.v:23$36.
+  merging $macc model for $flatten\topi.\spg.$mul$src/sphere.v:23$35 into $flatten\topi.\spg.$add$src/sphere.v:23$36.
+  merging $macc model for $flatten\topi.\spb.$mul$src/sphere.v:23$34 into $flatten\topi.\spb.$add$src/sphere.v:23$36.
+  merging $macc model for $flatten\topi.\spb.$mul$src/sphere.v:23$35 into $flatten\topi.\spb.$add$src/sphere.v:23$36.
+  creating $alu model for $macc $flatten\topi.\spr.$sub$src/sphere.v:20$33.
+  creating $alu model for $macc $flatten\topi.\spr.$sub$src/sphere.v:19$32.
+  creating $alu model for $macc $flatten\topi.\spr.$add$src/sphere.v:64$59.
+  creating $alu model for $macc $flatten\topi.\spr.$add$src/sphere.v:58$57.
+  creating $alu model for $macc $flatten\topi.\spr.$add$src/sphere.v:43$51.
+  creating $alu model for $macc $flatten\topi.\spg.$sub$src/sphere.v:66$60.
+  creating $alu model for $macc $flatten\topi.\spg.$sub$src/sphere.v:60$58.
+  creating $alu model for $macc $flatten\topi.\spg.$sub$src/sphere.v:41$45.
+  creating $alu model for $macc $flatten\topi.\spg.$sub$src/sphere.v:41$43.
+  creating $alu model for $macc $flatten\topi.\spg.$sub$src/sphere.v:20$33.
+  creating $alu model for $macc $flatten\topi.\spg.$sub$src/sphere.v:19$32.
+  creating $alu model for $macc $flatten\topi.\spr.$sub$src/sphere.v:41$45.
+  creating $alu model for $macc $flatten\topi.\spr.$sub$src/sphere.v:41$43.
+  creating $alu model for $macc $flatten\topi.\spg.$add$src/sphere.v:64$59.
+  creating $alu model for $macc $flatten\topi.\spg.$add$src/sphere.v:58$57.
+  creating $alu model for $macc $flatten\topi.\spg.$add$src/sphere.v:43$51.
+  creating $alu model for $macc $flatten\topi.\spb.$sub$src/sphere.v:66$60.
+  creating $alu model for $macc $flatten\topi.\spb.$sub$src/sphere.v:60$58.
+  creating $alu model for $macc $flatten\topi.\spb.$sub$src/sphere.v:41$45.
+  creating $alu model for $macc $flatten\topi.\spb.$sub$src/sphere.v:41$43.
+  creating $alu model for $macc $flatten\topi.\spb.$sub$src/sphere.v:20$33.
+  creating $alu model for $macc $flatten\topi.\spb.$sub$src/sphere.v:19$32.
+  creating $alu model for $macc $flatten\topi.\spr.$sub$src/sphere.v:66$60.
+  creating $alu model for $macc $flatten\topi.\spr.$sub$src/sphere.v:60$58.
+  creating $alu model for $macc $flatten\topi.\spb.$add$src/sphere.v:64$59.
+  creating $alu model for $macc $flatten\topi.\spb.$add$src/sphere.v:58$57.
+  creating $alu model for $macc $flatten\topi.\spb.$add$src/sphere.v:43$51.
+  creating $alu model for $macc $flatten\topi.\core.$add$src/vga_core.v:83$81.
+  creating $alu model for $macc $flatten\topi.\core.$add$src/vga_core.v:76$79.
+  creating $alu model for $macc $flatten\topi.$sub$src/top.v:69$30.
+  creating $alu model for $macc $flatten\topi.$sub$src/top.v:68$23.
+  creating $macc cell for $flatten\topi.\spg.$add$src/sphere.v:23$36: $auto$alumacc.cc:365:replace_macc$880
+  creating $macc cell for $flatten\topi.\spb.$add$src/sphere.v:23$36: $auto$alumacc.cc:365:replace_macc$881
+  creating $macc cell for $flatten\topi.\spr.$add$src/sphere.v:23$36: $auto$alumacc.cc:365:replace_macc$882
+  creating $alu model for $flatten\topi.$gt$src/top.v:66$20 ($gt): new $alu
+  creating $alu model for $flatten\topi.$gt$src/top.v:66$21 ($gt): new $alu
+  creating $alu model for $flatten\topi.\core.$ge$src/vga_core.v:60$68 ($ge): new $alu
+  creating $alu model for $flatten\topi.\core.$ge$src/vga_core.v:61$72 ($ge): new $alu
+  creating $alu model for $flatten\topi.\core.$le$src/vga_core.v:59$67 ($le): new $alu
+  creating $alu model for $flatten\topi.\core.$lt$src/vga_core.v:58$66 ($lt): new $alu
+  creating $alu model for $flatten\topi.\core.$lt$src/vga_core.v:60$69 ($lt): new $alu
+  creating $alu model for $flatten\topi.\core.$lt$src/vga_core.v:61$73 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spb.$gt$src/sphere.v:41$40 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spb.$gt$src/sphere.v:50$54 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spb.$gt$src/sphere.v:53$55 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spb.$gt$src/sphere.v:56$56 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spb.$lt$src/sphere.v:41$42 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spb.$lt$src/sphere.v:44$52 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spb.$lt$src/sphere.v:47$53 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spg.$gt$src/sphere.v:41$40 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spg.$gt$src/sphere.v:50$54 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spg.$gt$src/sphere.v:53$55 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spg.$gt$src/sphere.v:56$56 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spg.$lt$src/sphere.v:41$42 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spg.$lt$src/sphere.v:44$52 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spg.$lt$src/sphere.v:47$53 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spr.$gt$src/sphere.v:41$40 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spr.$gt$src/sphere.v:50$54 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spr.$gt$src/sphere.v:53$55 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spr.$gt$src/sphere.v:56$56 ($gt): new $alu
+  creating $alu model for $flatten\topi.\spr.$lt$src/sphere.v:41$42 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spr.$lt$src/sphere.v:44$52 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spr.$lt$src/sphere.v:47$53 ($lt): new $alu
+  creating $alu model for $flatten\topi.\spb.$eq$src/sphere.v:42$50 ($eq): merged with $flatten\topi.\spb.$gt$src/sphere.v:56$56.
+  creating $alu model for $flatten\topi.\spg.$eq$src/sphere.v:42$50 ($eq): merged with $flatten\topi.\spg.$gt$src/sphere.v:56$56.
+  creating $alu model for $flatten\topi.\spr.$eq$src/sphere.v:42$50 ($eq): merged with $flatten\topi.\spr.$gt$src/sphere.v:56$56.
+  creating $alu cell for $flatten\topi.\spr.$lt$src/sphere.v:47$53: $auto$alumacc.cc:485:replace_alu$912
+  creating $alu cell for $flatten\topi.\spr.$lt$src/sphere.v:44$52: $auto$alumacc.cc:485:replace_alu$923
+  creating $alu cell for $flatten\topi.\spr.$lt$src/sphere.v:41$42: $auto$alumacc.cc:485:replace_alu$934
+  creating $alu cell for $flatten\topi.\spr.$gt$src/sphere.v:56$56, $flatten\topi.\spr.$eq$src/sphere.v:42$50: $auto$alumacc.cc:485:replace_alu$945
+  creating $alu cell for $flatten\topi.\spr.$gt$src/sphere.v:53$55: $auto$alumacc.cc:485:replace_alu$956
+  creating $alu cell for $flatten\topi.\spr.$gt$src/sphere.v:50$54: $auto$alumacc.cc:485:replace_alu$961
+  creating $alu cell for $flatten\topi.\spr.$gt$src/sphere.v:41$40: $auto$alumacc.cc:485:replace_alu$966
+  creating $alu cell for $flatten\topi.\spg.$lt$src/sphere.v:47$53: $auto$alumacc.cc:485:replace_alu$977
+  creating $alu cell for $flatten\topi.\spg.$lt$src/sphere.v:44$52: $auto$alumacc.cc:485:replace_alu$988
+  creating $alu cell for $flatten\topi.\spg.$lt$src/sphere.v:41$42: $auto$alumacc.cc:485:replace_alu$999
+  creating $alu cell for $flatten\topi.\spg.$gt$src/sphere.v:56$56, $flatten\topi.\spg.$eq$src/sphere.v:42$50: $auto$alumacc.cc:485:replace_alu$1010
+  creating $alu cell for $flatten\topi.\spg.$gt$src/sphere.v:53$55: $auto$alumacc.cc:485:replace_alu$1017
+  creating $alu cell for $flatten\topi.\spg.$gt$src/sphere.v:50$54: $auto$alumacc.cc:485:replace_alu$1022
+  creating $alu cell for $flatten\topi.\spg.$gt$src/sphere.v:41$40: $auto$alumacc.cc:485:replace_alu$1027
+  creating $alu cell for $flatten\topi.\spb.$lt$src/sphere.v:47$53: $auto$alumacc.cc:485:replace_alu$1038
+  creating $alu cell for $flatten\topi.\spb.$lt$src/sphere.v:44$52: $auto$alumacc.cc:485:replace_alu$1049
+  creating $alu cell for $flatten\topi.\spb.$lt$src/sphere.v:41$42: $auto$alumacc.cc:485:replace_alu$1060
+  creating $alu cell for $flatten\topi.\spb.$gt$src/sphere.v:56$56, $flatten\topi.\spb.$eq$src/sphere.v:42$50: $auto$alumacc.cc:485:replace_alu$1071
+  creating $alu cell for $flatten\topi.\spb.$gt$src/sphere.v:53$55: $auto$alumacc.cc:485:replace_alu$1082
+  creating $alu cell for $flatten\topi.\spb.$gt$src/sphere.v:50$54: $auto$alumacc.cc:485:replace_alu$1087
+  creating $alu cell for $flatten\topi.\spb.$gt$src/sphere.v:41$40: $auto$alumacc.cc:485:replace_alu$1092
+  creating $alu cell for $flatten\topi.\core.$lt$src/vga_core.v:61$73: $auto$alumacc.cc:485:replace_alu$1103
+  creating $alu cell for $flatten\topi.\core.$lt$src/vga_core.v:60$69: $auto$alumacc.cc:485:replace_alu$1114
+  creating $alu cell for $flatten\topi.\core.$lt$src/vga_core.v:58$66: $auto$alumacc.cc:485:replace_alu$1119
+  creating $alu cell for $flatten\topi.\core.$le$src/vga_core.v:59$67: $auto$alumacc.cc:485:replace_alu$1124
+  creating $alu cell for $flatten\topi.\core.$ge$src/vga_core.v:61$72: $auto$alumacc.cc:485:replace_alu$1137
+  creating $alu cell for $flatten\topi.\core.$ge$src/vga_core.v:60$68: $auto$alumacc.cc:485:replace_alu$1146
+  creating $alu cell for $flatten\topi.$gt$src/top.v:66$21: $auto$alumacc.cc:485:replace_alu$1159
+  creating $alu cell for $flatten\topi.$gt$src/top.v:66$20: $auto$alumacc.cc:485:replace_alu$1164
+  creating $alu cell for $flatten\topi.$sub$src/top.v:68$23: $auto$alumacc.cc:485:replace_alu$1169
+  creating $alu cell for $flatten\topi.$sub$src/top.v:69$30: $auto$alumacc.cc:485:replace_alu$1172
+  creating $alu cell for $flatten\topi.\core.$add$src/vga_core.v:76$79: $auto$alumacc.cc:485:replace_alu$1175
+  creating $alu cell for $flatten\topi.\core.$add$src/vga_core.v:83$81: $auto$alumacc.cc:485:replace_alu$1178
+  creating $alu cell for $flatten\topi.\spb.$add$src/sphere.v:43$51: $auto$alumacc.cc:485:replace_alu$1181
+  creating $alu cell for $flatten\topi.\spb.$add$src/sphere.v:58$57: $auto$alumacc.cc:485:replace_alu$1184
+  creating $alu cell for $flatten\topi.\spb.$add$src/sphere.v:64$59: $auto$alumacc.cc:485:replace_alu$1187
+  creating $alu cell for $flatten\topi.\spr.$sub$src/sphere.v:60$58: $auto$alumacc.cc:485:replace_alu$1190
+  creating $alu cell for $flatten\topi.\spr.$sub$src/sphere.v:66$60: $auto$alumacc.cc:485:replace_alu$1193
+  creating $alu cell for $flatten\topi.\spb.$sub$src/sphere.v:19$32: $auto$alumacc.cc:485:replace_alu$1196
+  creating $alu cell for $flatten\topi.\spb.$sub$src/sphere.v:20$33: $auto$alumacc.cc:485:replace_alu$1199
+  creating $alu cell for $flatten\topi.\spb.$sub$src/sphere.v:41$43: $auto$alumacc.cc:485:replace_alu$1202
+  creating $alu cell for $flatten\topi.\spb.$sub$src/sphere.v:41$45: $auto$alumacc.cc:485:replace_alu$1205
+  creating $alu cell for $flatten\topi.\spb.$sub$src/sphere.v:60$58: $auto$alumacc.cc:485:replace_alu$1208
+  creating $alu cell for $flatten\topi.\spb.$sub$src/sphere.v:66$60: $auto$alumacc.cc:485:replace_alu$1211
+  creating $alu cell for $flatten\topi.\spg.$add$src/sphere.v:43$51: $auto$alumacc.cc:485:replace_alu$1214
+  creating $alu cell for $flatten\topi.\spg.$add$src/sphere.v:58$57: $auto$alumacc.cc:485:replace_alu$1217
+  creating $alu cell for $flatten\topi.\spg.$add$src/sphere.v:64$59: $auto$alumacc.cc:485:replace_alu$1220
+  creating $alu cell for $flatten\topi.\spr.$sub$src/sphere.v:41$43: $auto$alumacc.cc:485:replace_alu$1223
+  creating $alu cell for $flatten\topi.\spr.$sub$src/sphere.v:41$45: $auto$alumacc.cc:485:replace_alu$1226
+  creating $alu cell for $flatten\topi.\spg.$sub$src/sphere.v:19$32: $auto$alumacc.cc:485:replace_alu$1229
+  creating $alu cell for $flatten\topi.\spg.$sub$src/sphere.v:20$33: $auto$alumacc.cc:485:replace_alu$1232
+  creating $alu cell for $flatten\topi.\spg.$sub$src/sphere.v:41$43: $auto$alumacc.cc:485:replace_alu$1235
+  creating $alu cell for $flatten\topi.\spg.$sub$src/sphere.v:41$45: $auto$alumacc.cc:485:replace_alu$1238
+  creating $alu cell for $flatten\topi.\spg.$sub$src/sphere.v:60$58: $auto$alumacc.cc:485:replace_alu$1241
+  creating $alu cell for $flatten\topi.\spg.$sub$src/sphere.v:66$60: $auto$alumacc.cc:485:replace_alu$1244
+  creating $alu cell for $flatten\topi.\spr.$add$src/sphere.v:43$51: $auto$alumacc.cc:485:replace_alu$1247
+  creating $alu cell for $flatten\topi.\spr.$add$src/sphere.v:58$57: $auto$alumacc.cc:485:replace_alu$1250
+  creating $alu cell for $flatten\topi.\spr.$add$src/sphere.v:64$59: $auto$alumacc.cc:485:replace_alu$1253
+  creating $alu cell for $flatten\topi.\spr.$sub$src/sphere.v:19$32: $auto$alumacc.cc:485:replace_alu$1256
+  creating $alu cell for $flatten\topi.\spr.$sub$src/sphere.v:20$33: $auto$alumacc.cc:485:replace_alu$1259
+  created 60 $alu and 3 $macc cells.
+
+6.21. Executing OPT pass (performing simple optimizations).
+
+6.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~15 debug messages>
+
+6.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.21.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+6.21.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    New input vector for $reduce_and cell $auto$opt_dff.cc:223:make_patterns_logic$810: { $auto$opt_dff.cc:197:make_patterns_logic$807 $auto$alumacc.cc:501:replace_alu$1072 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:223:make_patterns_logic$783: { $auto$alumacc.cc:501:replace_alu$1011 $auto$opt_dff.cc:197:make_patterns_logic$780 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:223:make_patterns_logic$777: { $auto$alumacc.cc:501:replace_alu$1011 $auto$opt_dff.cc:197:make_patterns_logic$774 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:223:make_patterns_logic$756: { $auto$opt_dff.cc:197:make_patterns_logic$753 $auto$alumacc.cc:501:replace_alu$946 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:223:make_patterns_logic$750: { $auto$alumacc.cc:501:replace_alu$946 $auto$opt_dff.cc:197:make_patterns_logic$747 }
+    New input vector for $reduce_and cell $auto$opt_dff.cc:223:make_patterns_logic$804: { $auto$opt_dff.cc:197:make_patterns_logic$801 $auto$alumacc.cc:501:replace_alu$1072 }
+  Optimizing cells in module \top.
+Performed a total of 6 changes.
+
+6.21.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.21.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.21.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 12 unused cells and 44 unused wires.
+<suppressed ~13 debug messages>
+
+6.21.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.21.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.21.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~24 debug messages>
+
+6.21.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+6.21.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.21.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.21.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.21.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.21.16. Finished OPT passes. (There is nothing left to do.)
+
+6.22. Executing MEMORY pass.
+
+6.22.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+6.22.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+6.22.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+6.22.4. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+6.22.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.22.6. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+6.22.7. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+6.22.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.22.9. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+6.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.24. Executing MEMORY_BRAM pass (mapping $mem cells to block memories).
+
+6.25. Executing TECHMAP pass (map to technology primitives).
+
+6.25.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/brams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ICE40_RAM4K'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M0'.
+Generating RTLIL representation for module `\$__ICE40_RAM4K_M123'.
+Successfully finished Verilog frontend.
+
+6.25.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~5 debug messages>
+
+6.26. Executing ICE40_BRAMINIT pass.
+
+6.27. Executing OPT pass (performing simple optimizations).
+
+6.27.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~111 debug messages>
+
+6.27.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~24 debug messages>
+Removed a total of 8 cells.
+
+6.27.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.27.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 19 unused cells and 62 unused wires.
+<suppressed ~20 debug messages>
+
+6.27.5. Finished fast OPT passes.
+
+6.28. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+6.29. Executing OPT pass (performing simple optimizations).
+
+6.29.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.29.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.29.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+6.29.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+    Consolidated identical input bits for $pmux cell $flatten\topi.$procmux$617:
+      Old ports: A=162'001111111111111111100000000000000000000000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111, B=7290'001111111111111111000000000000000000000000000000111111111111111111111111111111111111111100000000000011100111111111110011111111111111111111111111111111111111111111001111111111111100000000000000000000000000000000001111111111111111111111110000000111111100000000000011100111111111110011111111111111111111111111111111111111111111001111111111111000000000000111111111110000000000000111111111111111111111000000000001111111111111000111100111111111111111111111111111111111111111111111111111111111001111111111111000000000011111111111111110000000000111111111111111111110000111100000111111111111001111100111111111111111111111111111111111111111111111111111111111001111111111110000000001111111111111111111100000000011111111111111111100011111111100011111111110011111100100000111110011111000001001111100000011111000000111111111001111111111100000000011111111111111111111110000000001111111111111111000111111111110011111111100011111100000000011110011110000000001111000000001110000000011111111001111111111000000000000000000000001111111111000000000111111111111111001110000000110001111111000111111100001100011110011100001100001110000110000110001110011111111001111111111000000000000000000000001111110011100000000111111111111110001100000000111001111110001111111100111110001110011100011110001110001111000110011111111111111001111111110000000000000000000000011111110011110000000011111111111110011100011000111001111110011111111100111110001110011100111111001110011111100110000111111111111001111111110000000000000000000000011111100011111000000011111111111110011100111100111001111100111111111100111110001110011100111111001110011111100111000000111111111001111111110000000111111111100000111111100011111000000011111111111110011100111100110001111000111111111100111110001110011100111111001110011111100111111000011111111001111111100000001111111111100000111111000011111100000001111111111110011100011000000011110001111111111100111110001110011100011110001110001111000111111110001111111001111111100000001111111111100001111111000001111100000001111111111110011100000000000111100011111111111100001100011110011100001100001110000110000110011100001111111001111111100000011111111111000001111110000001111110000001111111111111001110000000001111100000000000011100000000011110011110000000001111000000001110000000011111111001111111000000011111111111000011111110000001111110000000111111111111000111111111111111100000000000011100100000111110011111000001001111100000011111000000111111111001111111000000011111111110000011111100000001111110000000111111111111100011111111001111111111111111111111111111111111111111111110001111111111111111111111111111111001111111000000111111111110000111111100000001111110000000111111111111110000111100001111111111111111111111111111111111111110011100001111111111111111111111111111111001111111000000111111111100000111111000000000111111000000111111111111111000000000011111111111111111111111111111111111111110000000011111111111111111111111111111111001111111000000111111111100001111111000010000111111000000111111111111111100000001111111111111111111111111111111111111111111000000111111111111111111111111111111111001111111000000111111111000001111110000010000111111000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111000000111111111000011111110000110000111111000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111000000111111110000011111100000111000011111000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111000000011111110000111111100001111000011110000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111000000011111100000111001000001111000011110000000111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111100000011111100000000000000011111000011110000001111111111111000000011111111000001111110000000111111000000011111111111111111111111111111111111111111111111001111111100000011111000000000000000001111000011110000001111111111110000000001111110000000111100000000011110000000001111111111111111111111111111111111111111111111001111111100000001111000000000000000000001100001100000001111111111110001110000111100011000011100011100001110001110000111111111111111111111111111111111111111111111001111111100000001110000000000000000000111100001100000011111111111111111111000111100111100011111111110001111111111000111111111111111111111111111111111111111111111001111111110000000110000000000000001111111100001000000011111111111111111111000111000111110011111111110001111111111000111111111111111111111111111111111111111111111001111111110000000111111111000011011111111100000000000011111111111111111111000111000111110001111111110001111111111000111111111111111111111111111111111111111111111001111111111000000011111111111100011111111110000000000111111111111111111111001111000111110001111111110011111111111001111111111111111111111111111111111111111111111001111111111000000001111111110000011111111110000000000111111111111111111110011111000111110001111111100111111111110011111111111111111111111111111111111111111111111001111111111100000000111111110000111111111110000000001111111111111111111100011111000111110001111111000111111111100011111111111111111111111111111111111111111111111001111111111110000000011111100000111111111110000000011111111111111111111000111111000111110001111110001111111111000111111111111111111111111111111111111111111111111001111111111111000000000111100001111111111000000000111111111111111111110001111111000111110011111100011111111110001111111111111111111111111111111111111111111111111001111111111111100000000001000001111111100000000001111111111111111111100011111111100111100011111000111111111100011111111111111111111111111111111111111111111111111001111111111111110000000000000011111100000000000011111111111111111111000111111111100011000011110001111111111000111111111111111111111111111111111111111111111111111001111111111111111000000000000000000000000000000111111111111111111110000000000111110000000111100000000001110000000000111111111111111111111111111111111111111111111001111111111111111100000000000000000000000000001111111111111111111110000000000111111000001111100000000001110000000000111111111111111111111111111111111111111111111001111111111111111110000000000000000000000000011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111111111111111100000000000000000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111111111111111111100000000000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111111111111111111111100000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111001111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, Y=$flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28
+      New ports: A=111'011100000000000000000000000000001111111111111111111111111111111111111111111111111111111111111111111111111111111, B=4995'011000000000000000000000000000000111111111111111111111111111110000000000000011111111110011111111111111111111111011000000000000000000000000000000001111111111111000000011111110000000000000011111111110011111111111111111111111010000000000111111111110000000000000111111111100000000000111111111111100010011111111111111111111111111111111111010000000011111111111111110000000000111111111000011110000011111111111100110011111111111111111111111111111111111010000001111111111111111111100000000011111110001111111110001111111111001110010000111110010000100000111000000111010000011111111111111111111110000000001111100011111111111001111111110001110000000011110000000000000010000000011010000000000000000001111111111000000000111100111000000011000111111100011110001100011110000010000100000001110011010000000000000000001111110011100000000111000110000000011100111111000111110011110001110000111000110000011111111010000000000000000011111110011110000000011001110001100011100111111001111110011110001110001111100111000000111111010000000000000000011111100011111000000011001110011110011100111110011111110011110001110001111100111001000000111010111111111100000111111100011111000000011001110011110011000111100011111110011110001110001111100111001111000011000111111111100000111111000011111100000001001110001100000001111000111111110011110001110000111000110001111110001000111111111100001111111000001111100000001001110000000000011110001111111110001100011110000010000100000011100001000111111111000001111110000001111110000001100111000000000111110000000000000000000011110000000000000010000000011000111111111000011111110000001111110000000100011111111111111110000000000000010000111110010000100000111000000111000111111110000011111100000001111110000000110001111111100111111111111111111111111111111111111000111111111111111001111111110000111111100000001111110000000111000011110000111111111111111111111111111111100110000111111111111111001111111100000111111000000000111111000000111100000000001111111111111111111111111111111100000001111111111111111001111111100001111111000010000111111000000111110000000111111111111111111111111111111111110000011111111111111111001111111000001111110000010000111111000000111111111111111111111111111111111111111111111111111111111111111111111001111111000011111110000110000111111000000111111111111111111111111111111111111111111111111111111111111111111111001111110000011111100000111000011111000000111111111111111111111111111111111111111111111111111111111111111111111000111110000111111100001111000011110000000111111111111111111111111111111111111111111111111111111111111111111111000111100000111001000001111000011110000000111111111111111111111111111111111111111111111111111111111111111111111000111100000000000000011111000011110000001100000001111111100000111111000001111000000011111111111111111111111111000111000000000000000001111000011110000001000000000111111000000011110000001110000000001111111111111111111111111000111000000000000000000001100001100000001000111000011110001100001110001110110001110000111111111111111111111111000110000000000000000000111100001100000011111111100011110011110001111111110111111111000111111111111111111111111010110000000000000001111111100001000000011111111100011100011111001111111110111111111000111111111111111111111111010111111111000011011111111100000000000011111111100011100011111000111111110111111111000111111111111111111111111010011111111111100011111111110000000000111111111100111100011111000111111111111111111001111111111111111111111111010001111111110000011111111110000000000111111111001111100011111000111111111111111110011111111111111111111111111010000111111110000111111111110000000001111111110001111100011111000111111101111111100011111111111111111111111111010000011111100000111111111110000000011111111100011111100011111000111111001111111000111111111111111111111111111010000000111100001111111111000000000111111111000111111100011111001111110001111110001111111111111111111111111111011000000001000001111111100000000001111111110001111111110011110001111100011111100011111111111111111111111111111011000000000000011111100000000000011111111100011111111110001100001111000111111000111111111111111111111111111111011000000000000000000000000000000111111111000000000011111000000011110000000110000000000111111111111111111111111011100000000000000000000000000001111111111000000000011111100000111110000000110000000000111111111111111111111111011110000000000000000000000000011111111111111111111111111111111111111111111111111111111111111111111111111111111011111100000000000000000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111100000000000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111100000000001111111111111111111111111111111111111111111111111111111111111111111111111111111111111111011111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx, Y={ $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [160] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [151] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [146] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [143:105] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [93:62] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [58:56] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [54:44] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [39:37] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [35:31] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [22:18] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [15:7] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] }
+      New connections: { $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [161] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [159:152] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [150:147] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [145:144] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [104:94] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [61:59] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [55] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [43:40] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [36] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [30:23] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [17:16] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [6:1] } = { $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [160] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [105] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [107] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [108] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [109] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [110] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [112] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [113] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [48:46] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [21] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [18] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [35] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [18] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [19] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [20] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [21] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [22] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] $flatten\topi.$0$mem2reg_rd$\imbus$src/top.v:69$1_DATA[161:0]$28 [0] }
+  Optimizing cells in module \top.
+Performed a total of 1 changes.
+
+6.29.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.29.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.29.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.29.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.29.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+6.29.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+6.29.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \top.
+Performed a total of 0 changes.
+
+6.29.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.29.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.29.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.29.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.29.16. Finished OPT passes. (There is nothing left to do.)
+
+6.30. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+6.31. Executing TECHMAP pass (map to technology primitives).
+
+6.31.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+6.31.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ice40_alu'.
+Successfully finished Verilog frontend.
+
+6.31.3. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $dff.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $sdff.
+Using extmapper simplemap for cells of type $lut.
+Using extmapper maccmap for cells of type $macc.
+  add { \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [6:0] } * { \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [14] \topi.spg.pmulvire2 [6:0] } (15x15 bits, unsigned)
+  add { \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [6:0] } * { \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [14] \topi.spg.pmulvire1 [6:0] } (15x15 bits, unsigned)
+Using template $paramod$4bdb94ac02745db6fc41e2e497d9b9793cd51dc6\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $and.
+Using template $paramod$49641a5ace7a8dbedd31c417f5a1b54fcecf6c7d\_80_ice40_alu for cells of type $alu.
+Using template $paramod$78e969f2586efcf3a5b0b0440bcca0db83d5cca2\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$00298f3f8094950cb9a5ff2fda48d0d8bde8806c\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$754650b284649a026620fc6856e5b6886cbfe794\_80_ice40_alu for cells of type $alu.
+Using template $paramod$93b49458bab1c00eb32aff458c583f46ff61e60f\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $sdffe.
+Using template $paramod$fc972a7a46956c1788f3cb5257b53c8f1df2d0cc\_90_alu for cells of type $alu.
+Using template $paramod$ba698a254f9a5947e85cbe7beae6b161eefc5386\_90_alu for cells of type $alu.
+Using template $paramod$32a7b7b86c07519b7537abc18e96f0331f97914d\_80_ice40_alu for cells of type $alu.
+Using template $paramod$5e422c97d4648c7864402691d7b06fc43e6ffb33\_80_ice40_alu for cells of type $alu.
+Using template $paramod$dbcdc7e8aa1a4080cea2deda6fdc8772064f4d90\_80_ice40_alu for cells of type $alu.
+Using template $paramod$103b4016182df467cceab67bcf3e18e6361ec0fd\_80_ice40_alu for cells of type $alu.
+Using template $paramod$f7417944f96f261f97a49c7e5ba603b32499b5a9\_80_ice40_alu for cells of type $alu.
+Using template $paramod$e940ca766570d3cff6a28979f0e6f06461be7dab\_80_ice40_alu for cells of type $alu.
+Using template $paramod$c4905825bb8ecc38b98eb4167e8b007447af7884\_80_ice40_alu for cells of type $alu.
+Using template $paramod$10ed987432f06055e5279101f9ec60a49861b43c\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $sdffce.
+  add { \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [6:0] } * { \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [14] \topi.spb.pmulvire2 [6:0] } (15x15 bits, unsigned)
+  add { \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [6:0] } * { \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [14] \topi.spb.pmulvire1 [6:0] } (15x15 bits, unsigned)
+Using template $paramod$cfcbb97e28b3a957f0a463a64fec87a7e9f92652\_80_ice40_alu for cells of type $alu.
+  add { \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [6:0] } * { \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [14] \topi.spr.pmulvire2 [6:0] } (15x15 bits, unsigned)
+  add { \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [6:0] } * { \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [14] \topi.spr.pmulvire1 [6:0] } (15x15 bits, unsigned)
+Using template $paramod$4e6ee5eb737cf7428f8e246e911ae1dac9ae2979\_80_ice40_alu for cells of type $alu.
+Using template $paramod$1afdf52ede8b3ed947b984fd6a9ccb7901b268dd\_90_pmux for cells of type $pmux.
+Using template $paramod$78464f9f65d57061f7490f3fe5dd257e4a61e2b7\_80_ice40_alu for cells of type $alu.
+Using template $paramod$constmap:8f4c3d4b904843f40ff325444b1994def11a947c$paramod$99a7e6e47766e4c83740a0c1dd0a55217978ae6d\_90_shift_shiftx for cells of type $shiftx.
+Using template $paramod$5042debdcb1fbd120a67f55dfe5b3afe2a9f08e5\_80_ice40_alu for cells of type $alu.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000001111 for cells of type $fa.
+Using template $paramod$67e8f4b8dba01cd3d8fc718acd02276257d102de\_80_ice40_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000001 for cells of type $lcu.
+Using template $paramod\_90_lcu\WIDTH=32'00000000000000000000000000000010 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~2382 debug messages>
+
+6.32. Executing OPT pass (performing simple optimizations).
+
+6.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~12608 debug messages>
+
+6.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~13548 debug messages>
+Removed a total of 4516 cells.
+
+6.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 1408 unused cells and 3455 unused wires.
+<suppressed ~1409 debug messages>
+
+6.32.5. Finished fast OPT passes.
+
+6.33. Executing ICE40_OPT pass (performing simple optimizations).
+
+6.33.1. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1010.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1010.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1017.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1017.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1022.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1022.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1027.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1027.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1038.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1038.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1049.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1049.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1060.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1060.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1071.slice[0].carry: CO=\topi.spb.spdcnt [2]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1082.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1038.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1087.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1049.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1092.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1060.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1103.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1103.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1114.slice[0].carry: CO=\topi.core.hscan_pos [4]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1119.slice[0].carry: CO=\topi.core.hscan_pos [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1124.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1103.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1137.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1103.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1146.slice[0].carry: CO=\topi.core.hscan_pos [4]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1159.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1159.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1164.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1164.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1169.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1164.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1172.slice[0].carry: CO=\topi.core.vreadwire [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1175.slice[0].carry: CO=\topi.core.vscan_pos [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1178.slice[0].carry: CO=\topi.core.hscan_pos [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1181.slice[0].carry: CO=\topi.spb.spdcnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1184.slice[0].carry: CO=\topi.spb.current_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1187.slice[0].carry: CO=\topi.spb.current_h [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1190.slice[0].carry: CO=\topi.spr.current_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1193.slice[0].carry: CO=\topi.spr.current_h [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1196.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1196.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1199.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1199.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1205.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1060.BB [3]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1208.slice[0].carry: CO=\topi.spb.current_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1211.slice[0].carry: CO=\topi.spb.current_h [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1214.slice[0].carry: CO=\topi.spg.spdcnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1217.slice[0].carry: CO=\topi.spg.current_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1220.slice[0].carry: CO=\topi.spg.current_h [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1226.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1226.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1229.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1229.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1232.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1232.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1238.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1027.BB [3]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1241.slice[0].carry: CO=\topi.spg.current_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1244.slice[0].carry: CO=\topi.spg.current_h [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1247.slice[0].carry: CO=\topi.spr.spdcnt [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1250.slice[0].carry: CO=\topi.spr.current_v [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1253.slice[0].carry: CO=\topi.spr.current_h [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1256.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1256.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$1259.slice[7].carry: CO=$auto$alumacc.cc:485:replace_alu$1259.C [7]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$912.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1253.X [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$923.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1250.X [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$934.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$934.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$956.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1253.X [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$961.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1250.X [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$966.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$934.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$977.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1017.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$988.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1022.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$alumacc.cc:485:replace_alu$999.slice[0].carry: CO=$auto$alumacc.cc:485:replace_alu$1027.BB [0]
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$1912.slice[0].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2653.slice[0].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2952.slice[0].carry: CO=1'0
+
+6.33.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~139 debug messages>
+
+6.33.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+6.33.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 15 unused cells and 6 unused wires.
+<suppressed ~16 debug messages>
+
+6.33.6. Rerunning OPT passes. (Removed registers in this run.)
+
+6.33.7. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$1912.slice[1].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2653.slice[1].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2952.slice[1].carry: CO=1'0
+
+6.33.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.33.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.33.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.33.12. Rerunning OPT passes. (Removed registers in this run.)
+
+6.33.13. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$1912.slice[2].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2653.slice[2].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2952.slice[2].carry: CO=1'0
+
+6.33.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.33.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.33.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.33.18. Rerunning OPT passes. (Removed registers in this run.)
+
+6.33.19. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2653.slice[3].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2952.slice[3].carry: CO=1'0
+
+6.33.20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.33.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.33.22. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.33.24. Rerunning OPT passes. (Removed registers in this run.)
+
+6.33.25. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2653.slice[4].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2952.slice[4].carry: CO=1'0
+
+6.33.26. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.33.27. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.33.28. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.33.30. Rerunning OPT passes. (Removed registers in this run.)
+
+6.33.31. Running ICE40 specific optimizations.
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2653.slice[5].carry: CO=1'0
+Optimized $__ICE40_CARRY_WRAPPER cell back to logic (without SB_CARRY) top.$auto$maccmap.cc:240:synth$2952.slice[5].carry: CO=1'0
+
+6.33.32. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.33.33. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.33.34. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.35. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.33.36. Rerunning OPT passes. (Removed registers in this run.)
+
+6.33.37. Running ICE40 specific optimizations.
+
+6.33.38. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.33.39. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.33.40. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.33.41. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.33.42. Finished OPT passes. (There is nothing left to do.)
+
+6.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+6.35. Executing TECHMAP pass (map to technology primitives).
+
+6.35.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+6.35.2. Continuing TECHMAP pass.
+Using template \$_DFF_P_ for cells of type $_DFF_P_.
+Using template \$_SDFF_PP0_ for cells of type $_SDFF_PP0_.
+Using template \$_SDFFCE_PP0P_ for cells of type $_SDFFCE_PP0P_.
+Using template \$_DFFE_PP_ for cells of type $_DFFE_PP_.
+Using template \$_SDFFCE_PP1P_ for cells of type $_SDFFCE_PP1P_.
+No more expansions possible.
+<suppressed ~202 debug messages>
+
+6.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1164.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1172.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1175.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1178.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1181.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1184.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1187.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1190.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1193.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1196.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1199.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1205.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1208.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1211.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1214.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1217.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1220.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1226.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1229.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1232.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1238.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1241.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1244.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1247.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1250.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1253.slice[0].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1256.slice[7].carry ($lut).
+Mapping top.$auto$alumacc.cc:485:replace_alu$1259.slice[7].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$1912.slice[0].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$1912.slice[1].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$1912.slice[2].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2653.slice[0].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2653.slice[1].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2653.slice[2].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2653.slice[3].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2653.slice[4].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2653.slice[5].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2952.slice[0].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2952.slice[1].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2952.slice[2].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2952.slice[3].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2952.slice[4].carry ($lut).
+Mapping top.$auto$maccmap.cc:240:synth$2952.slice[5].carry ($lut).
+
+6.38. Executing ICE40_OPT pass (performing simple optimizations).
+
+6.38.1. Running ICE40 specific optimizations.
+
+6.38.2. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~693 debug messages>
+
+6.38.3. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+<suppressed ~807 debug messages>
+Removed a total of 269 cells.
+
+6.38.4. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.38.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+Removed 0 unused cells and 1372 unused wires.
+<suppressed ~1 debug messages>
+
+6.38.6. Rerunning OPT passes. (Removed registers in this run.)
+
+6.38.7. Running ICE40 specific optimizations.
+
+6.38.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+<suppressed ~6 debug messages>
+
+6.38.9. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.38.10. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.38.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.38.12. Rerunning OPT passes. (Removed registers in this run.)
+
+6.38.13. Running ICE40 specific optimizations.
+
+6.38.14. Executing OPT_EXPR pass (perform const folding).
+Optimizing module top.
+
+6.38.15. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\top'.
+Removed a total of 0 cells.
+
+6.38.16. Executing OPT_DFF pass (perform DFF optimizations).
+
+6.38.17. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \top..
+
+6.38.18. Finished OPT passes. (There is nothing left to do.)
+
+6.39. Executing TECHMAP pass (map to technology primitives).
+
+6.39.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/latches_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+6.39.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+6.40. Executing ABC pass (technology mapping using ABC).
+
+6.40.1. Extracting gate netlist of module `\top' to `<abc-temp-dir>/input.blif'..
+Extracted 4408 gates and 4859 wires to a netlist network with 449 inputs and 369 outputs.
+
+6.40.1.1. Executing ABC.
+Running ABC command: berkeley-abc -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + ifraig 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + lutpack -S 1 
+ABC: + dress 
+ABC: Total number of equiv classes                =    1510.
+ABC: Participating nodes from both networks       =    3202.
+ABC: Participating nodes from the first network   =    1513. (  82.18 % of nodes)
+ABC: Participating nodes from the second network  =    1689. (  91.74 % of nodes)
+ABC: Node pairs (any polarity)                    =    1513. (  82.18 % of names can be moved)
+ABC: Node pairs (same polarity)                   =    1055. (  57.31 % of names can be moved)
+ABC: Total runtime =     0.14 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+6.40.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:     1838
+ABC RESULTS:        internal signals:     4041
+ABC RESULTS:           input signals:      449
+ABC RESULTS:          output signals:      369
+Removing temp directory.
+
+6.41. Executing ICE40_WRAPCARRY pass (wrap carries).
+
+6.42. Executing TECHMAP pass (map to technology primitives).
+
+6.42.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/ff_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/ff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFCE_PP1P_'.
+Successfully finished Verilog frontend.
+
+6.42.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~22 debug messages>
+Removed 278 unused cells and 1810 unused wires.
+
+6.43. Executing OPT_LUT pass (optimize LUTs).
+Discovering LUTs.
+Number of LUTs:     2080
+  1-LUT              127
+  2-LUT              469
+  3-LUT              832
+  4-LUT              652
+  with \SB_CARRY    (#0)  220
+  with \SB_CARRY    (#1)  255
+
+Eliminating LUTs.
+Number of LUTs:     2080
+  1-LUT              127
+  2-LUT              469
+  3-LUT              832
+  4-LUT              652
+  with \SB_CARRY    (#0)  220
+  with \SB_CARRY    (#1)  255
+
+Combining LUTs.
+Number of LUTs:     1994
+  1-LUT              127
+  2-LUT              376
+  3-LUT              760
+  4-LUT              731
+  with \SB_CARRY    (#0)  220
+  with \SB_CARRY    (#1)  255
+
+Eliminated 0 LUTs.
+Combined 86 LUTs.
+<suppressed ~9450 debug messages>
+
+6.44. Executing TECHMAP pass (map to technology primitives).
+
+6.44.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ice40/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ice40/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+6.44.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000001\LUT=2'01 for cells of type $lut.
+Using template $paramod$fd904e9e35cfd343a9df248824bd3f1408724879\$lut for cells of type $lut.
+Using template $paramod$deba17538f4cd4af4a7f03bc51507e8ef8b1d7d8\$lut for cells of type $lut.
+Using template $paramod$571404c0889eaf57f492cb5e37f8acb5df5852f9\$lut for cells of type $lut.
+Using template $paramod$ecf9cac817e9cbb222dc9e58a122faf05f34c860\$lut for cells of type $lut.
+Using template $paramod$608f40069c27841a5b3bdf03643a34bdc8974072\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01000000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000000 for cells of type $lut.
+Using template $paramod$82b4a585d1edcb5c6e755dc9bd3392228a1c1304\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01100000 for cells of type $lut.
+Using template $paramod$4282def8dbd6df3d1248ad282c629bee684502c2\$lut for cells of type $lut.
+Using template $paramod$78e1751931755f088c8bc676bcbc3bb642c26bfc\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0001 for cells of type $lut.
+Using template $paramod$05f19d9c2311a3d1ab38ece311a1bb9f96c62043\$lut for cells of type $lut.
+Using template $paramod$272652f6c6fbe9a75eff76e45cc7e2788835518b\$lut for cells of type $lut.
+Using template $paramod$6e238df02989b317f10820a22773676e71120644\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00011111 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111111 for cells of type $lut.
+Using template $paramod$6d6beead1425af15cf78b27fd9b11b41b5d4bce8\$lut for cells of type $lut.
+Using template $paramod$6e3b22478ca21c5590744f2e30b92938c4d90996\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000111 for cells of type $lut.
+Using template $paramod$38f9bf4dd2329347b8471f0a98443dd323386889\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010011 for cells of type $lut.
+Using template $paramod$b4f15f202f50520dbc381cd0880ac94f830f05a8\$lut for cells of type $lut.
+Using template $paramod$81d8a60fd95b1a9f9ef71c12a774ae6988cb9fd5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0111 for cells of type $lut.
+Using template $paramod$c24ed72ebb67e9ead6029e42e909ef7fc0abbb11\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001011 for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001101 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$048d4aa2263b685fba6c6b0d38f6224df0dc3042\$lut for cells of type $lut.
+Using template $paramod$b93d1ea7a612a32c185108f67a153d44ffb9aac2\$lut for cells of type $lut.
+Using template $paramod$94ac66a11090dca84889e55fcf03297912a5b7ec\$lut for cells of type $lut.
+Using template $paramod$41326ad8644342a66dfb051d050f2b6fbf15015b\$lut for cells of type $lut.
+Using template $paramod$b4410865e8124402796f9dfbf73ef8d279fdbd08\$lut for cells of type $lut.
+Using template $paramod$f3e1547c4b47e64c590e75cf09078b2507c8cc75\$lut for cells of type $lut.
+Using template $paramod$332a399730bfc61adea04021a76b1c4e4030f37d\$lut for cells of type $lut.
+Using template $paramod$e9c77024ca501b890c641f9c0b10e27242db8730\$lut for cells of type $lut.
+Using template $paramod$179512a187da069f3b79ef6612a41e494e7d54b6\$lut for cells of type $lut.
+Using template $paramod$1843b3c15f2447d117e2d5de9b00f791ef5f9fa3\$lut for cells of type $lut.
+Using template $paramod$4b2297966ddb718657b80566604f97685ffc0120\$lut for cells of type $lut.
+Using template $paramod$a3cdc1eb771a2c6a16f64da161e11100ac409d2b\$lut for cells of type $lut.
+Using template $paramod$ae9b8abdb4f811ce37985dd5106af9cd21223954\$lut for cells of type $lut.
+Using template $paramod$b297295e19b03521716155b85537bbe86d6a9ae6\$lut for cells of type $lut.
+Using template $paramod$12879138d1e376f344e47ea40be66b776233be75\$lut for cells of type $lut.
+Using template $paramod$df196ed0a1da5c4a58c5e08a1dac304fd3fccaab\$lut for cells of type $lut.
+Using template $paramod$1bf62ab10e48d71d6497bccacf5c70420c470fe9\$lut for cells of type $lut.
+Using template $paramod$cb92beff9eab733e7181d891fbc8c3950b9abc0a\$lut for cells of type $lut.
+Using template $paramod$aead7bdde3cc5b9dd1f33d00bc965f1130a31302\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01101001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00001110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110100 for cells of type $lut.
+Using template $paramod$c5b694ec89d7629b942ccf6a9be1d39e24f8edec\$lut for cells of type $lut.
+Using template $paramod$a50be0e6fa3a01511bb234559cb74fb8bd3e2061\$lut for cells of type $lut.
+Using template $paramod$ed10455c824c2a3761aabdeb1e31dad905f66e6e\$lut for cells of type $lut.
+Using template $paramod$314fe9458b07176c4d2c8c59533027c4c55155b5\$lut for cells of type $lut.
+Using template $paramod$cde3aa23c1efa60a470cf0f0281347d6ba585afa\$lut for cells of type $lut.
+Using template $paramod$50b99034fbf984a51c265442496081454147f31e\$lut for cells of type $lut.
+Using template $paramod$1f3b67373a23476b64a6ed61bde9dbe9df1086de\$lut for cells of type $lut.
+Using template $paramod$243c00f5eb9faa1d5ce3478fdc389a56070781f8\$lut for cells of type $lut.
+Using template $paramod$baa939b0bd5b3e0c8760492528669bd58f640542\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11001010 for cells of type $lut.
+Using template $paramod$cd6c4b4da6d8737b72fd2dc8f5d83d8967445809\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010100 for cells of type $lut.
+Using template $paramod$710e2f28b833d9ff9835883514d3e174c73017ba\$lut for cells of type $lut.
+Using template $paramod$f30e2557b0b57a4600a709ca1226ae82845ff0c5\$lut for cells of type $lut.
+Using template $paramod$2bdfdda73873e8931790d872b72220895e67fee5\$lut for cells of type $lut.
+Using template $paramod$a4df2b5be2b644499880e088a11556935f22b401\$lut for cells of type $lut.
+Using template $paramod$6e46ec5a196ba1a24b8e69ab094cadc07c13ac1f\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod$62b9cc19760df4f05d0c7360b790a1fb852ac400\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010111 for cells of type $lut.
+Using template $paramod$7d3cbfc289ec00e0691f33de08826f2254fca668\$lut for cells of type $lut.
+Using template $paramod$ae5a79439036b7b2721e5aee006dc524e35c4de7\$lut for cells of type $lut.
+Using template $paramod$ab2a0e40f059a1b02be99afabe16fa27dd5f64c0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10110010 for cells of type $lut.
+Using template $paramod$9843d77d4773ab424562cc9655d50a1bc2125488\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00101011 for cells of type $lut.
+Using template $paramod$c46e26e5a927423cd46556d9948ab62bff492185\$lut for cells of type $lut.
+Using template $paramod$3c17fcbb332f03cef33f214b93f1f99815920a16\$lut for cells of type $lut.
+Using template $paramod$32f5ea57a02a66d26d4a2e3cd7f26ba05fa8bd58\$lut for cells of type $lut.
+Using template $paramod$475fc4ee379457a10a495cd48774c3adf995fdc7\$lut for cells of type $lut.
+Using template $paramod$89ce1067ddd7d1b862c35a14cf05e043d151c807\$lut for cells of type $lut.
+Using template $paramod$f6dd01673f8f9c9ecbbfa50d05e704565b0d6345\$lut for cells of type $lut.
+Using template $paramod$5858bd6d78d6f4fef506811d9419710ec77e5fb5\$lut for cells of type $lut.
+Using template $paramod$19f6618c6d2779e1fed2a83ad88280a623f28945\$lut for cells of type $lut.
+Using template $paramod$e5cb8e913f4daae476fde2b364998f21967f1f08\$lut for cells of type $lut.
+Using template $paramod$0cf69d223154b4a6209139daec3524052ac22dd1\$lut for cells of type $lut.
+Using template $paramod$9d859a37c79ca3dc008d38c5068f5735a7923122\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01110001 for cells of type $lut.
+Using template $paramod$017d8c8b5f8f0bd543e7b1e7d026dcb67424a519\$lut for cells of type $lut.
+Using template $paramod$6ad1063397984b2b09aa574378f44b9f2ae1c5b3\$lut for cells of type $lut.
+Using template $paramod$c8f07aef973f71b76e0c6a31237492b2778f5a58\$lut for cells of type $lut.
+Using template $paramod$7295da7c5b19f528a428229f2570e0a23ad372af\$lut for cells of type $lut.
+Using template $paramod$24ced899438e172604a424008974634c832673b7\$lut for cells of type $lut.
+Using template $paramod$9ce3cb48532e1935dedb6055756fefa71d90eef1\$lut for cells of type $lut.
+Using template $paramod$5766b753e513aa2393ffc25ef94ebc79dc098484\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11010100 for cells of type $lut.
+Using template $paramod$b431bfd938e35871dd0b7668e1503c7e8b9d491c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11100001 for cells of type $lut.
+Using template $paramod$3f0549729b9cf7d6fa6533d688d092bceca9764e\$lut for cells of type $lut.
+Using template $paramod$014b659db5d002405936b374e32d204782099707\$lut for cells of type $lut.
+Using template $paramod$0e573fd81731047abcc72636166e5369d25058dc\$lut for cells of type $lut.
+Using template $paramod$c1ecd13b5e2feb77a725850b71cc8207f7841c40\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00110101 for cells of type $lut.
+Using template $paramod$83ee59f46eb162e73a2d3ee6c047e91158527ba8\$lut for cells of type $lut.
+Using template $paramod$279a8d961e6b2ded8450bee8ed637cb9efa31f02\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10111100 for cells of type $lut.
+Using template $paramod$98d40e23bb57d56e14345fb0942003de3e361f25\$lut for cells of type $lut.
+Using template $paramod$ac7453ff4b96c067bd7d606c960f364a6f2a412b\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00000001 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00111101 for cells of type $lut.
+Using template $paramod$af2b970363478c934f632261f05f42c59b0d7a99\$lut for cells of type $lut.
+Using template $paramod$e96de5e9fcce737e52eacf39c70c8f533dc27d63\$lut for cells of type $lut.
+Using template $paramod$7273cc095094e6935b52f63f704faeefd4e2fcbd\$lut for cells of type $lut.
+Using template $paramod$4adb41216162ad4c68ce9ea5c48385c753262ac3\$lut for cells of type $lut.
+Using template $paramod$bdcc7419558c51ee485d729ffcee7ae3419ab9c7\$lut for cells of type $lut.
+Using template $paramod$729aa850e969bb9bb1c205734876853e142656d4\$lut for cells of type $lut.
+Using template $paramod$04b674496422df8889c01c3744b94097628ccfbc\$lut for cells of type $lut.
+Using template $paramod$162eacaa56f6f80a5a27551a5f2071c174364807\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010000 for cells of type $lut.
+Using template $paramod$2d8ecce5c907513cebcd38ab5efe0fc26fc03464\$lut for cells of type $lut.
+Using template $paramod$06b5f7e5a17024622a77ecd9b5b6f113e0b34c96\$lut for cells of type $lut.
+Using template $paramod$c9994e2a733aa21e4bfe57075af37a9c5257c791\$lut for cells of type $lut.
+Using template $paramod$85b779ce5ab505dbf25e5e046fb43ca2b76b878b\$lut for cells of type $lut.
+Using template $paramod$d53578aacfd93124244778d88be0e90eb09c1b1b\$lut for cells of type $lut.
+Using template $paramod$400e70ab40bc034f95288d674157da21bbd1fd4b\$lut for cells of type $lut.
+Using template $paramod$894d03f4de0f6e253be504f9d446758937f5ff4a\$lut for cells of type $lut.
+Using template $paramod$acf49cb7bd2805dee4b4ebb218aa5924b1be7704\$lut for cells of type $lut.
+Using template $paramod$0de052767abdccc3aefc818722bdc3c7850d25d6\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101000 for cells of type $lut.
+Using template $paramod$4da2782c2e024b3eded45331a6607870b9d0254f\$lut for cells of type $lut.
+Using template $paramod$8b24407096beec47292ddeb1567a058197a320b9\$lut for cells of type $lut.
+Using template $paramod$5a621b016c894274d07edef48c49b401a15fd796\$lut for cells of type $lut.
+Using template $paramod$a56d70ffd309b1185b27bc1a5092003d8bf696be\$lut for cells of type $lut.
+Using template $paramod$c1a19a87ccbbb03d43a72335db63f692ddf82cc1\$lut for cells of type $lut.
+Using template $paramod$38debc9ecb856f8fdb72adb11bd5220839a653fd\$lut for cells of type $lut.
+Using template $paramod$2e7a95e82db1d690ae9ba5d10f68b175fa2cb467\$lut for cells of type $lut.
+Using template $paramod$e053a22d78e6bd5ea33183ea69976f0db741be0e\$lut for cells of type $lut.
+Using template $paramod$f63fe32f78d5f3c5de711945c592c8c5ec2303ae\$lut for cells of type $lut.
+Using template $paramod$e49f6e3576ef1a6d2f58c54414dbb786af8cc869\$lut for cells of type $lut.
+Using template $paramod$45d617c2ce0041e27b541f62b0fc3c3ce441a616\$lut for cells of type $lut.
+Using template $paramod$53ce561f80f32d4298a3beadc88b6c5c78293221\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01011100 for cells of type $lut.
+Using template $paramod$49308c380d4434ff502cc9276068deff427c75f2\$lut for cells of type $lut.
+Using template $paramod$a2d691ba21e093558f2a36669ee489fbccffbcd3\$lut for cells of type $lut.
+Using template $paramod$a670b08a47dd8a34f954c50cd06e9996d77e8467\$lut for cells of type $lut.
+Using template $paramod$6d23198eb2b8f79a41c7626605a61009695893b1\$lut for cells of type $lut.
+Using template $paramod$52b0f43ae6cb52b5e726dd3244952f6f33bb5f19\$lut for cells of type $lut.
+Using template $paramod$e5e9da8fed769f971686eed8c5eea50e61f73aaa\$lut for cells of type $lut.
+Using template $paramod$973818279bc95792902f3c09371fd2407d04a2a5\$lut for cells of type $lut.
+Using template $paramod$64b542623c90988571507ab8fe6892dd7691eb51\$lut for cells of type $lut.
+Using template $paramod$90211918a84e1cef3407e0f8e61fa8260d248e82\$lut for cells of type $lut.
+Using template $paramod$b4f85a6321a00b090afc4e21d68e7b99eb94d149\$lut for cells of type $lut.
+Using template $paramod$f372bf1b294e01fd043eb05a6280cd9dfb6e2e04\$lut for cells of type $lut.
+Using template $paramod$fccccf8bb2add7667329c686feec7546eb9a3ae3\$lut for cells of type $lut.
+Using template $paramod$11ec7271d8e6e5aeaace08c13e4c601f10e31038\$lut for cells of type $lut.
+Using template $paramod$83bebd9c81a37c8a14d1dd0e3e969d46fdf98b38\$lut for cells of type $lut.
+Using template $paramod$d119410bab96963da0139669592048db2c09198b\$lut for cells of type $lut.
+Using template $paramod$5e3f8a8607d77590f8896fc79b5b6eb43c037f7f\$lut for cells of type $lut.
+Using template $paramod$e7cf8575a194eb3a0b763de77523fb7297d31466\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01111111 for cells of type $lut.
+Using template $paramod$22295481aee48631dc0088cef4e5f102b07c1986\$lut for cells of type $lut.
+Using template $paramod$575b200168b9e109c2ed99df4359056f2c6696ac\$lut for cells of type $lut.
+Using template $paramod$ae2167737e884e455e0dc9c6a1bfb0669403f070\$lut for cells of type $lut.
+Using template $paramod$e8d21d48932db4a39724296dac4ae977c8b55cfd\$lut for cells of type $lut.
+Using template $paramod$3525bc88021caeb0b6fb10b051fd947bd104e42a\$lut for cells of type $lut.
+Using template $paramod$b4d0f4738a5ce50c7f36c2aa2ecc09cfb874f2b6\$lut for cells of type $lut.
+Using template $paramod$19ec49f31a8d230a567aa44ce3ea81a03c101e2b\$lut for cells of type $lut.
+Using template $paramod$f54c0ffd7b041ca43eac7710ab19c0666d826c22\$lut for cells of type $lut.
+Using template $paramod$c471af5667a682bd131a5b479e58e470d1b2b7cd\$lut for cells of type $lut.
+Using template $paramod$5da9e32e6cad289d787e84f13269323907d9debb\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01001011 for cells of type $lut.
+Using template $paramod$be1e3680444be8116bfceaeae3b57dca9c8fe764\$lut for cells of type $lut.
+Using template $paramod$9d707d218adbd63b6f9a0c79d7ee037306fb6296\$lut for cells of type $lut.
+Using template $paramod$7d791c2363f4f019348f93a148b2a44b4ba6b5b3\$lut for cells of type $lut.
+Using template $paramod$fde34d7b7d817d093917fab37479be42cf9a4427\$lut for cells of type $lut.
+Using template $paramod$b383ebb0e38b07c1d30fbe36272f5349936909f1\$lut for cells of type $lut.
+Using template $paramod$06a49eeef9c9c0ca3eeb308c4b5ee09a412d6201\$lut for cells of type $lut.
+Using template $paramod$e56d99447d8a3ece8eda45209ed4b9fdcdbf8d26\$lut for cells of type $lut.
+Using template $paramod$a59507d273cd827eb6c46c37820d50a1b717efdf\$lut for cells of type $lut.
+Using template $paramod$fd0c475e3e6f20ad225673464af09a8de603ab71\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'01010011 for cells of type $lut.
+Using template $paramod$c4a17bea5999077a9c51990b31053416dbae0cf5\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10000111 for cells of type $lut.
+Using template $paramod$edc3c77d6d0cfa370b4c94131cecc413b4b0ef1c\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00011100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11110001 for cells of type $lut.
+Using template $paramod$70e260b11d61c2beb07d1dff789df1caf45cc3d9\$lut for cells of type $lut.
+Using template $paramod$8466aae7f3132f822e70bbd8738850d820750479\$lut for cells of type $lut.
+Using template $paramod$3d4f386a402395482bb3a56159e7ad913d874bd8\$lut for cells of type $lut.
+Using template $paramod$6f625205336ac6ce7b8747324becdbce1049bc9c\$lut for cells of type $lut.
+Using template $paramod$30ce3396a4f454a728b6261a41eaea793c92facd\$lut for cells of type $lut.
+Using template $paramod$5b13d2ee598c87cdbe912286a35c6fd102e2087c\$lut for cells of type $lut.
+Using template $paramod$9b91bdb4860275f5be50e3609e37f56938e8ae3f\$lut for cells of type $lut.
+Using template $paramod$1bf896d3df72cf1993f96b3035ad813f0b4180a2\$lut for cells of type $lut.
+Using template $paramod$765dca61dbfa835dacf2a260c8a4c5a36939a046\$lut for cells of type $lut.
+Using template $paramod$e787226f1df702eba02156ef6404b1bb67657fed\$lut for cells of type $lut.
+Using template $paramod$948dd2ffa030d5b4f89d0bac81e2525d9a86122d\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1011 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$e5759512db67494ff77fbdfc66dff4006376568f\$lut for cells of type $lut.
+Using template $paramod$fd1e68d43235621014e35437b4508a97628b7e8f\$lut for cells of type $lut.
+Using template $paramod$bba54c1ef87367812b4c15f4aed5ac70773df775\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~4792 debug messages>
+Removed 0 unused cells and 4745 unused wires.
+
+6.45. Executing AUTONAME pass.
+Renamed 133094 objects in module top (207 iterations).
+<suppressed ~3628 debug messages>
+
+6.46. Executing HIERARCHY pass (managing design hierarchy).
+
+6.46.1. Analyzing design hierarchy..
+Top module:  \top
+
+6.46.2. Analyzing design hierarchy..
+Top module:  \top
+Removed 0 unused modules.
+
+6.47. Printing statistics.
+
+=== top ===
+
+   Number of wires:               1162
+   Number of wire bits:          17458
+   Number of public wires:        1162
+   Number of public wire bits:   17458
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               2645
+     SB_CARRY                      470
+     SB_DFF                          5
+     SB_DFFE                        20
+     SB_DFFESR                      70
+     SB_DFFESS                      22
+     SB_DFFSR                       63
+     SB_LUT4                      1994
+     SB_PLL40_PAD                    1
+
+6.48. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Found and reported 0 problems.
+
+6.49. Executing JSON backend.
+
+Warnings: 166 unique messages, 166 total
+End of script. Logfile hash: 60e31ad6ba, CPU: user 4.53s system 0.05s, MEM: 90.37 MB peak
+Yosys 0.12 (git sha1 2156e20)
+Time spent: 25% 35x opt_expr (1 sec), 19% 1x abc (1 sec), ...

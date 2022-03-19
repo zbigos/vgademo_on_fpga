@@ -1,0 +1,45 @@
+# 12 MHz clock
+set_io -nowarn clk R9
+set_frequency CLK 100
+
+set_io --warn-no-port led1 C8
+set_io --warn-no-port led2 F7
+set_io --warn-no-port led3 K9
+
+set_io --warn-no-port butt1 B3
+set_io --warn-no-port butt2 B4
+set_io --warn-no-port butt3 B5
+
+
+# RS232
+# set_io -nowarn RX          6
+# set_io -nowarn TX          9
+
+# SPI Flash
+# set_io -nowarn FLASH_SCK  15
+# set_io -nowarn FLASH_SSB  16
+# set_io -nowarn FLASH_IO0  14
+# set_io -nowarn FLASH_IO1  17
+# set_io -nowarn FLASH_IO2  12
+# set_io -nowarn FLASH_IO3  13
+
+# VGA
+set_io -nowarn vga_h_sync N9
+set_io -nowarn vga_v_sync P9
+
+set_io -nowarn vga_r[0] T15
+set_io -nowarn vga_r[1] T14
+set_io -nowarn vga_r[2] T11
+set_io -nowarn vga_r[3] R10
+
+set_io -nowarn vga_g[0] L9
+set_io -nowarn vga_g[1] G5
+set_io -nowarn vga_g[2] L7
+set_io -nowarn vga_g[3] N6
+
+set_io -nowarn vga_b[0] R14
+set_io -nowarn vga_b[1] T13
+set_io -nowarn vga_b[2] T10
+set_io -nowarn vga_b[3] T9
+
+set_io -nowarn btn     K11
