@@ -61,7 +61,7 @@ module VGAcore
         end else begin    
             if (hreadwire == 10'd799) begin
                 hreadwire <= 0;
-                if (vreadwire == 10'd524) begin
+                if (vreadwire == 10'd523) begin
                     vreadwire <= 0;
                 end else begin
                     vreadwire <= vreadwire + 1'b1;
