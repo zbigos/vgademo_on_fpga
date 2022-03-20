@@ -6,9 +6,9 @@ module vga_demo(
     input reset,
     output vga_h_sync,
     output vga_v_sync,
-    output reg[3:0] vga_r,
-    output reg[3:0] vga_g,
-    output reg[3:0] vga_b
+    output wire[3:0] vga_r,
+    output wire[3:0] vga_g,
+    output wire[3:0] vga_b
 );
 
     wire [9:0] h_readwire, v_readwire;
