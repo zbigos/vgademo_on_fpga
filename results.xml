@@ -1,6 +1,6 @@
 <testsuites name="results">
   <testsuite name="all" package="all">
-    <property name="random_seed" value="1647716003" />
-    <testcase name="test_debouncer" classname="test.test_toplevel" file="/home/zbyszek/Devel/My-Projects/vgademo-on-fpga/test/test_toplevel.py" lineno="65" time="0.0001125335693359375" sim_time_ns="1.0" ratio_time="8886.237288135593" />
+    <property name="random_seed" value="1647729965" />
+    <testcase name="test_debouncer" classname="test.test_toplevel" file="/home/zbyszek/Devel/My-Projects/vgademo-on-fpga/test/test_toplevel.py" lineno="65" time="0.00012159347534179688" sim_time_ns="1.0" ratio_time="8224.125490196078" />
   </testsuite>
 </testsuites>

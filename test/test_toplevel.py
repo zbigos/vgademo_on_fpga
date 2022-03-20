@@ -23,37 +23,34 @@ def parse_screen_state(r, g, b, vsync, hsync):
     global hscan_items
     global image
     if last_hsync == 0 and hsync == 1:
-        if (len(hscan_items)) >= 800:
-            if vsync == 1:
-                # we expect hsync = 0 only on end of sync pulse.
-                back_porch_items = list(q[4] for q in hscan_items[-96:])
-                assert hscan_items[-97][4] == 1 # last element must be 1
-                assert all(map(lambda x: x == 0, back_porch_items))
+        if (len(hscan_items)) >= 400:
+            # we expect hsync = 0 only on end of sync pulse.
+            back_porch_items = list(q[4] for q in hscan_items[-96:])
+            assert hscan_items[-97][4] == 1 # last element must be 1
+            assert all(map(lambda x: x == 0, back_porch_items))
 
-                # we expect front porch to be all zero
-                scanline_imv = []
-                # we get image from visible area
-                visible_pixels = hscan_items[48:688]
-                for vp in visible_pixels:
-                    try:
-                        scanline_imv.append([vp[0].integer / 16.0, vp[1].integer / 16.0, vp[2].integer / 16.0])
-                    except:
-                        print(vp)
-                        pass
+            # we expect front porch to be all zero
+            scanline_imv = []
+            for vp in hscan_items:
+                try:
+                    scanline_imv.append([vp[0].integer / 16.0, vp[1].integer / 16.0, vp[2].integer / 16.0])
+                except:
+                    print("AAAA", len(scanline_imv), len(image))
+                    scanline_imv.append((0, 0, 0))
+                    pass
 
-                while len(scanline_imv) < 640:
-                    scanline_imv.append((1, 1, 1))
-                scanline_imv = np.array(scanline_imv)
-                image.append(scanline_imv)
-                print(vsync, len(image), scanline_imv.shape)
+            scanline_imv = np.array(scanline_imv)
+            if scanline_imv.shape != (800, 3):
+                print(len(scanline_imv), len(image))
+            image.append(scanline_imv)
 
         hscan_items = []
 
     if last_vsync == 1 and vsync == 0:
         npimage = np.array(image)
         print(npimage.shape)
-        cv2.imshow('image',npimage)
-        cv2.waitKey(1)
+        #cv2.imshow('image',npimage)
+        #cv2.waitKey(1)
         image = []
 
     last_hsync = hsync
@@ -64,6 +61,7 @@ def parse_screen_state(r, g, b, vsync, hsync):
 
 @cocotb.test()
 async def test_debouncer(dut):
+    print("this is too slow to run")
     return
     global last_hsync
     clock = Clock(dut.clk, 3.9, units="us")

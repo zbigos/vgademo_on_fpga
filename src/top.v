@@ -11,8 +11,8 @@ module vga_demo(
     output reg[3:0] vga_b
 );
 
-    wire core_busy;
     wire [9:0] h_readwire, v_readwire;
+    wire drawing_pixels;
     wire [3:0] rcol;
     wire [3:0] gcol;
     wire [3:0] bcol;
@@ -63,10 +63,10 @@ module vga_demo(
     assign sumg = fvalue ? 4'b1111 : gcol + background[7:4] > 15 ? 15 : gcol + background[7:4];
     assign sumb = fvalue ? 4'b1111 : bcol + background[11:8] > 15 ? 15 : bcol + background[11:8];
     
-    assign fbit = h_readwire > (640 - 160) & v_readwire > (480 - 80);
-    wire [8:0] imtar;
-    assign imtar = 640 - h_readwire;
-    assign fvalue = fbit ? !imbus[v_readwire - 401][imtar] : 1'b0;
+    assign fbit = (h_readwire > 10'd475) & (h_readwire < 10'd635) & (v_readwire > 10'd420) &  (v_readwire < 10'd480);
+    wire [9:0] imtar;
+    assign fvalue = (drawing_pixels & fbit) ? !imbus[v_readwire - 10'd410][10'd635 - h_readwire] : 1'b0;
+    
     wire [161:0] imbus [80:0]; 
 
     assign imbus[0] = 160'b1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111;
@@ -153,12 +153,12 @@ module vga_demo(
     VGAcore core(
         .clk_25_175(clk),
         .reset(reset),
-        .drawing_pixels(core_busy),
         .h_sync(vga_h_sync),
         .v_sync(vga_v_sync),
-        .pixstream({sumr[3:0], sumg[3:0], sumb[3:0]}),
+        .pixstream({sumr[3:0], sumg[3:0], sumb[3:0]}), //
         .hreadwire(h_readwire),
         .vreadwire(v_readwire),
+        .drawing_pixels(drawing_pixels),
         .r(vga_r),
         .g(vga_g),
         .b(vga_b)
