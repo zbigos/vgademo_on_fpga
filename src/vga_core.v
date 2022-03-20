@@ -18,12 +18,12 @@ module VGAcore
         input wire reset,
         output wire h_sync,
         output wire v_sync,
-        output reg[9:0] hreadwire,
-        output reg[9:0] vreadwire,
+        output wire[9:0] hreadwire,
+        output wire[9:0] vreadwire,
         input wire[11:0] pixstream,
-        output reg[3:0] r,
-        output reg[3:0] g,
-        output reg[3:0] b,
+        output wire[3:0] r,
+        output wire[3:0] g,
+        output wire[3:0] b,
         output wire drawing_pixels
 );
 
