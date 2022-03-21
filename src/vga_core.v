@@ -49,7 +49,7 @@ module VGAcore
     assign h_drawing_pixels = hreadwire < 10'd656 & hreadwire > 10'd16;
     assign v_drawing_pixels = vreadwire < 10'd490 & vreadwire > 10'd10; 
     assign h_sync = !((hreadwire >= 10'd656) & (hreadwire < 10'd752));
-    assign v_sync = !((vreadwire > 10'd490) & (vreadwire < 10'd492));
+    assign v_sync = !((vreadwire >= 10'd490) & (vreadwire < 10'd492));
 
     always @(posedge clk_25_175) begin
         if (!reset) begin
